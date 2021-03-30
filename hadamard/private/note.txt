@@ -1,0 +1,16 @@
+had-8.txt
+
+renamed to
+
+had-8-0.txt
+
+because otherwise the ordering of the matrices could depend on the output
+of the dir function, which could be different for different operating
+systems.
+
+Edited
+
+had-16-hed.txt
+had-16-syl.txt
+
+to move comment line to end of file.
