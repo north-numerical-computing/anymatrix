@@ -125,39 +125,39 @@ elseif matches(varargin{1}, ...
     end
 % Check for single argument commands.
 elseif (nargin == 1)
-    if ismember(varargin{1}, {'lookfor', 'l', 'contents', 'c'})
+    if any(startsWith({'lookfor', 'contents'}, varargin{1}))
         error('Please specify one argument to this command.');
-    elseif ~ismember(varargin{1}, {'p', 'properties', 'groups', 'g', ...
-            'sets', 'se', 'all', 'scan', 'sc', 'help', 'h'})
+    elseif ~any(startsWith({'properties', 'groups', ...
+            'sets', 'all', 'scan', 'help'}, varargin{1}))
         error('Anymatrix command was not recognized.');
     end
 % Check other commands that don't contain matrix IDs in the first arg.
 elseif nargin == 2
     if ~ischar(varargin{2})
         error('Second argument in this command must be a char array.');
-    elseif ismember(varargin{1}, {'help', 'h'}) || ...
-        (ismember(varargin{1}, {'properties', 'p'}) && ...
+    elseif startsWith({'help'}, varargin{1}) || ...
+        (startsWith('properties', varargin{1}) && ...
          matches(varargin{2}, ...
          alphanumericsPattern + '/' + alphanumericsPattern))
         if ~ismember(varargin{2}, matrix_IDs)
             error('Specified matrix ID was not found.');
         end
-    elseif ismember(varargin{2}, {'help', 'h', 'properties', 'p'})
+    elseif any(startsWith({'help', 'properties'}, varargin{2}))
         error('Specified matrix ID was not found.');
-    elseif ismember(varargin{1}, {'groups', 'g', 'contents', 'c'})
+    elseif any(startsWith({'groups', 'contents'}, varargin{1}))
         if ~ismember(varargin{2}, group_IDs)
             error('The specified group ID was not found.');
         end
-    elseif ismember(varargin{2}, {'contents', 'c'})
+    elseif startsWith('contents', varargin{2})
         if ~ismember(varargin{1}, group_IDs)
             error("The specified group ID was not found");
         end
-    elseif ismember(varargin{1}, {'sets', 'se'}) && ~ismember( ...
+    elseif startsWith('sets', varargin{1}) && ~ismember( ...
             varargin{2}, set_IDs)
         error('ID of the specified set was not found.');
-    elseif ~ismember(varargin{1}, {'groups', 'g', 'sets', 'se', ...
-            'properties', 'p', 'help', 'h', 'contents', 'c', ...
-            'lookfor', 'l'})
+    elseif ~any(startsWith({'groups', 'sets', ...
+            'properties', 'help', 'contents', ...
+            'lookfor'}, varargin{1}))
         error('Anymatrix command was not recognized.');
     end
 elseif nargin > 2
@@ -165,62 +165,61 @@ elseif nargin > 2
 end
 
 % Execute the specified command.
-switch varargin{1}
-    case 'all'
-        varargout{1} = matrix_IDs;
-    case {'contents', 'c'}
-        show_contents(varargin{2});
-    case {'groups', 'g'}
-        if (nargin == 1)
-            varargout{1} = group_IDs;
-        else
-            varargout{1} = matrix_IDs(contains(matrix_IDs, ...
-                                               strcat(varargin{2}, '/')));
-        end
-    case {'help', 'h'}
-        if (nargin == 1)
-            help anymatrix;
-        else
-            show_matrix_help(varargin{2});
-        end
-    case {'properties', 'p'}
-        if (nargin == 1)
-            varargout{1} = supported_properties;
-        elseif (matches(varargin{2}, ...
-            alphanumericsPattern + '/' + alphanumericsPattern))
-            varargout{1} = properties{strcmp(matrix_IDs, varargin{2})};
-        else
-            varargout{1} = search_by_properties(varargin{2});
-        end
-    case {'scan', 'sc'}
-        supported_properties = prop_list();
-        [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
-        disp('Anymatrix scanning done.');
-    case {'lookfor', 'l'}
-        varargout{1} = lookfor_term(varargin{2});
-    case {'sets', 'se'}
-        if (nargin == 1)
-            varargout{1} = set_IDs;
-        else
-            % NOTE: Preload all sets instead of reading a file everytime?
-            varargout{1} = regexprep(readcell( ...
-                strcat(root_path, '/sets/', varargin{2}, '.txt'), ...
-                'Delimiter', ':', 'CommentStyle', '%', 'LineEnding', ...
-                ';', 'Whitespace', ' \n'), '[\n\r]+',' ');
-        end
-    otherwise
-        if (nargin > 1) && ischar(varargin{2}) && ...
-                ismember(varargin{2}, {'help', 'h'})
-            show_matrix_help(varargin{1});
-        elseif (nargin > 1) && ischar(varargin{2}) && ...
-                ismember(varargin{2}, {'properties', 'p'})
-            varargout{1} = properties{strcmp(matrix_IDs, varargin{1})};
-        elseif (nargin > 1) && ischar(varargin{2}) && ...
-                ismember(varargin{2}, {'contents', 'c'})
-            show_contents(varargin{1});   
-        else
-            [varargout{1:nargout}] = generate_matrix(varargin{1:nargin});
-        end
+if startsWith('all', varargin{1})
+    varargout{1} = matrix_IDs;
+elseif startsWith('contents', varargin{1})
+    show_contents(varargin{2});
+elseif startsWith('groups', varargin{1})
+    if (nargin == 1)
+        varargout{1} = group_IDs;
+    else
+        varargout{1} = matrix_IDs(contains(matrix_IDs, ...
+                                           strcat(varargin{2}, '/')));
+    end
+elseif startsWith('help', varargin{1})
+    if (nargin == 1)
+        help anymatrix;
+    else
+        show_matrix_help(varargin{2});
+    end
+elseif startsWith('properties', varargin{1})
+    if (nargin == 1)
+        varargout{1} = supported_properties;
+    elseif (matches(varargin{2}, ...
+        alphanumericsPattern + '/' + alphanumericsPattern))
+        varargout{1} = properties{strcmp(matrix_IDs, varargin{2})};
+    else
+        varargout{1} = search_by_properties(varargin{2});
+    end
+elseif startsWith('scan', varargin{1})
+    supported_properties = prop_list();
+    [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
+    disp('Anymatrix scanning done.');
+elseif startsWith('lookfor', varargin{1})
+    varargout{1} = lookfor_term(varargin{2});
+elseif startsWith('sets', varargin{1})
+    if (nargin == 1)
+        varargout{1} = set_IDs;
+    else
+        % NOTE: Preload all sets instead of reading a file everytime?
+        varargout{1} = regexprep(readcell( ...
+            strcat(root_path, '/sets/', varargin{2}, '.txt'), ...
+            'Delimiter', ':', 'CommentStyle', '%', 'LineEnding', ...
+            ';', 'Whitespace', ' \n'), '[\n\r]+',' ');
+    end
+else
+    if (nargin > 1) && ischar(varargin{2}) && ...
+            startsWith('help', varargin{2})
+        show_matrix_help(varargin{1});
+    elseif (nargin > 1) && ischar(varargin{2}) && ...
+            startsWith('properties', varargin{2})
+        varargout{1} = properties{strcmp(matrix_IDs, varargin{1})};
+    elseif (nargin > 1) && ischar(varargin{2}) && ...
+            startsWith('contents', varargin{2})
+        show_contents(varargin{1});
+    else
+        [varargout{1:nargout}] = generate_matrix(varargin{1:nargin});
+    end
 end
 
     % Top level function for scanning the files.
