@@ -45,8 +45,9 @@ function varargout = anymatrix(varargin)
 %       matrix with a specified matrix id and parameters (if any) in1 to
 %       inN. Some matrices supply multiple output arguments.
 %
-%   Shorthand commands with one, or in some cases two of the first letters
-%   are also accepted: 'c', 'g', 'h', 'l', 'p', 'sc', 'se'.
+%   Shorthand commands with one or more of the starting letters are also
+%   accepted, for example 'c', 'cont', 'g', 'gr', 'h', 'l', 'p', 'prop',
+%   'sc', 'se'.
 %
 %   Anymatrix supports logical queries to search for matrices by
 %   properties. In the command anymatrix('properties', '[properties]'), the
