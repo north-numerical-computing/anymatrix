@@ -87,6 +87,14 @@ if verLessThan('matlab','9.9')
     error('MATLAB 2020b or newer is required.')
 end
 
+% Convert inputs to char arrays if supplied as strings.
+if (nargin > 0) && isstring(varargin{1})
+    varargin{1} = convertStringsToChars(varargin{1});
+end
+if (nargin > 1) && isstring(varargin{2})
+    varargin{2} = convertStringsToChars(varargin{2});
+end
+
 % Flag used for performing the first scan of the file structure.
 persistent files_scanned
 
@@ -114,7 +122,7 @@ if nargin == 0
     help anymatrix;
     return;
 % No commands that accept non-char-array first arg.
-elseif ~(ischar(varargin{1}) | isstring(varargin{1}))
+elseif ~ischar(varargin{1})
     error('Anymatrix command was not recognized');
 % If first arg is an existent matrix ID, we don't check the other args and
 % leave the matrix generator to deal with any issues.
@@ -294,7 +302,7 @@ end
         expression = replace(expression, ' or ', ' | ');
         expression = replace(expression, ' not ', ' ~');
         expression = replace(expression, '(not ', '(~');
-        if (strcmp(expression(1:3), 'not'))
+        if startsWith(expression, 'not')
             expression = expression(4:length(expression));
             expression(1) = '~';
         end
