@@ -114,7 +114,7 @@ if nargin == 0
     help anymatrix;
     return;
 % No commands that accept non-char-array first arg.
-elseif ~ischar(varargin{1})
+elseif ~(ischar(varargin{1}) | isstring(varargin{1}))
     error('Anymatrix command was not recognized');
 % If first arg is an existent matrix ID, we don't check the other args and
 % leave the matrix generator to deal with any issues.
