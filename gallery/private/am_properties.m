@@ -18,7 +18,7 @@ P = {
              'parameter-dependent'} 
     'dramadah', {'toeplitz', 'integer', 'nonnegative',...
                  'ill-conditioned', 'unimodular'} 
-    'fiedler', {'symmetric', 'parameter-dependent'} 
+    'fiedler', {'symmetric', 'indefinite', 'parameter-dependent'} 
     'forsythe', {'eigenvalues', 'parameter-dependent'} 
     'frank', {'hessenberg', 'integer', 'nonnegative'} 
     'gcdmat', {'symmetric', 'positive definite', 'integer', 'positive',...
@@ -65,7 +65,7 @@ P = {
     'randsvd', {'orthogonal', 'rectangular', 'square', 'random'} 
     'redheff', {'integer', 'nonnegative', 'eigenvalues'} 
     'riemann', {'integer', 'eigenvalues'} 
-    'ris', {'hankel'} 
+    'ris', {'hankel', 'symmetric', 'indefinite'}
     'sampling', {'eigenvalues'} 
     'smoke', {'complex', 'eigenvalues'} 
     'toeppd', {'symmetric', 'positive definite', 'toeplitz',...

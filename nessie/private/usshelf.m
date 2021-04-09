@@ -4,6 +4,6 @@ function [A,properties] = usshelf
 %   between species in the marine ecosystem of the Northeast US continetnal
 %   shelf.
 
-properties = {'symmetric', 'sparse', 'binary', 'fixed size'};
+properties = {'symmetric', 'indefinite', 'sparse', 'binary', 'fixed size'};
 A = load('usshelf.mat');
 A = A.Shelf_A;

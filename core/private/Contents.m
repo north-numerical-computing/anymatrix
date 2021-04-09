@@ -14,3 +14,5 @@
 %   vand       - Vandermonde matrix.
 %   vecperm    - Vec-permutation matrix.
 %   wilson     - Wilson matrix.
+%   zielke_symm - Symmetric matrix of Zielke.
+%   zielke_nonsymm - Nonsymmetric matrix of Zielke. 

@@ -1,4 +1,4 @@
-function [V,properties] = vand(m, p)
+function [V,properties] = vand(m,p)
 %VAND   Vandermonde matrix.
 %   V = VAND(P), where P is a vector, produces the (primal)
 %   Vandermonde matrix based on the points P, i.e. V(i,j) = P(j)^(i-1).
@@ -13,7 +13,7 @@ function [V,properties] = vand(m, p)
 
 properties = {'square', 'rectangular', 'parameter-dependent'};
 if nargin == 0, V = []; return, end
- 
+
 if nargin == 1, p = m; end
 n = length(p);
 

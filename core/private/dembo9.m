@@ -8,8 +8,8 @@ function [A,properties] = dembo9
 %   Reference:
 %   Eric Grosse and Cleve Moler, Underflow Can Hurt, SIAM News 20(6), 1, 1995.
 
-properties = {'hankel', 'symmetric', 'fixed size', 'rank deficient', ...
-              'integer'};
+properties = {'hankel', 'symmetric', 'indefinite', 'fixed size', ...
+              'rank deficient', 'integer'};
 
 A = [%
 -1  1  1 -1 -1  1  1 -1 -1

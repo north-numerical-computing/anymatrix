@@ -3,6 +3,6 @@ function [A,properties] = whiskydist
 %   WHISKYDIST is an 86-by-86 matrix of Euclidean distance between
 %   whisky distilleries.
 
-properties = {'symmetric', 'fixed size'};
+properties = {'symmetric', 'indefinite', 'fixed size'};
 A = load('whisky.mat');
 A = A.whiskydist;

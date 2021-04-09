@@ -12,8 +12,8 @@ function [P,properties] = blockhouse(Z)
 %   Robert S. Schreiber and Beresford N. Parlett, Block Reflectors: Theory
 %   and Computation, SIAM J. Numer. Anal. 25(1), 189-205, 1988.
 
-properties = {'orthogonal', 'symmetric', 'involutory', 'eigenvalues', ...
-              'parameter-dependent'};
+properties = {'orthogonal', 'symmetric', 'indefinite', 'involutory', ...
+              'eigenvalues', 'parameter-dependent'};
 if nargin == 0, P = []; return, end
     
 if size(Z) == 1

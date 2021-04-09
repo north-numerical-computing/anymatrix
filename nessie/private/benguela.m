@@ -4,6 +4,6 @@ function [A,properties] = benguela
 %   a network describing interactions between species in the Benguela
 %   marine ecosystem off the southwest coast of South Africa.
 
-properties = {'symmetric', 'sparse', 'binary', 'fixed size'};
+properties = {'symmetric', 'indefinite', 'sparse', 'binary', 'fixed size'};
 A = load('benguela.mat');
 A = A.Benguela_A;

@@ -26,7 +26,8 @@ function [C,properties] = augment(A, alpha)
 %      Second edition, Society for Industrial and Applied Mathematics,
 %      Philadelphia, PA, 2002; sec. 20.5.
 
-properties = {'symmetric', 'square', 'random', 'parameter-dependent'};
+properties = {'symmetric', 'indefinite', 'square', 'random', ...
+              'parameter-dependent'};
 if nargin == 0, C = []; return, end
 
 [m, n] = size(A);

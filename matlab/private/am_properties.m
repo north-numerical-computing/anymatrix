@@ -11,10 +11,11 @@ P = {
     'magic', {'integer','positive'}
     'pascal', {'integer', 'positive', 'involutory',...
                'totally nonnegative', 'triangular', 'ill-conditioned'}
-    'rosser', {'fixed size', 'symmetric', 'integer', 'positive', ...
-                'rank deficient'}
+    'rosser', {'fixed size', 'symmetric', 'indefinite', 'integer', ...
+               'positive', 'rank deficient'}
     'spiral', {'integer', 'positive'}
     'toeplitz', {'toeplitz', 'square', 'rectangular'}
     'vander', {}
-    'wilkinson', {'symmetric', 'tridiagonal', 'integer', 'nonnegative'}
+    'wilkinson', {'symmetric', 'indefinite' 'tridiagonal', 'integer', ...
+                  'nonnegative'}
     };

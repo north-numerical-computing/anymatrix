@@ -4,6 +4,6 @@ function [A,properties] = eer
 %   a network of connections betweem physically contiguous European
 %   economic regions.
 
-properties = {'symmetric', 'sparse', 'binary', 'fixed size'};
+properties = {'symmetric', 'indefinite', 'sparse', 'binary', 'fixed size'};
 A = load('eer.mat');
 A = A.A;

@@ -7,12 +7,10 @@ function M = prop_map
 
 M = {
     'banded', {'tridiagonal'}
-    'hermitian', {'hermitian indefinite', 'hermitian positive definite'}
     'integer', {'binary'}
     'nonnegative', {'positive'}
     'orthogonal', {'permutation'}
-    'symmetric', {'correlation', 'hankel', 'symmetric indefinite', ...
-                  'positive definite'}
+    'symmetric', {'correlation', 'hankel'}
     'positive definite', {'correlation'}
     'totally positive', {'totally negative'}
     };
