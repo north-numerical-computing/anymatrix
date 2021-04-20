@@ -5,10 +5,7 @@ function M = inv_prop_map
 %   properties in the second element of the row are not present.
 %   This avoids the need for the (common) properties to be specified.
 
-M = {
-    'real', {'complex'}
-    'scalable', {'fixed size'}
-    'square', {'rectangular'}
+M = {'real', {'complex'}
+     'scalable', {'fixed size'}
+     'square', {'rectangular'}
     };
-
-end

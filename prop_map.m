@@ -5,14 +5,11 @@ function M = prop_map
 %   second element of the row are automatically mapped, avoiding the need
 %   for the first elements to be specified.
 
-M = {
-    'banded', {'tridiagonal'}
-    'integer', {'binary'}
-    'nonnegative', {'positive'}
-    'orthogonal', {'permutation'}
-    'symmetric', {'correlation', 'hankel'}
-    'positive definite', {'correlation'}
-    'totally positive', {'totally negative'}
+M = {'banded', {'tridiagonal'}
+     'integer', {'binary'}
+     'nonnegative', {'positive'}
+     'orthogonal', {'permutation'}
+     'symmetric', {'correlation', 'hankel'}
+     'positive definite', {'correlation'}
+     'totally positive', {'totally negative'}
     };
-
-end
