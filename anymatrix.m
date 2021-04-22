@@ -27,6 +27,8 @@ function varargout = anymatrix(varargin)
 %   G = ANYMATRIX('groups') - return the available groups.
 %   M = ANYMATRIX('groups', '[group_id]') - return matrix IDs that belong
 %       to the group with a specified name [group_id].
+%   ANYMATRIX('groups', '[group_id]', '[repository]') - clone or update
+%       an anymatrix group stored in the specified repository.
 %   ANYMATRIX('help', '[matrix_id]') - list the help for a specified
 %       matrix (anymatrix('[matrix_id]', 'help') also accepted).
 %   M = ANYMATRIX('lookfor', [pattern]) - returns a list of matrix IDs
@@ -169,7 +171,7 @@ elseif nargin == 2
             'lookfor'}, varargin{1}))
         error('Anymatrix command was not recognized.');
     end
-elseif nargin > 2
+elseif (nargin > 2) && (~startsWith('groups', varargin{1}) || nargin > 3)
     error('Anymatrix command was not recognized (too many inputs).');
 end
 
@@ -181,9 +183,11 @@ elseif startsWith('contents', varargin{1})
 elseif startsWith('groups', varargin{1})
     if (nargin == 1)
         varargout{1} = group_IDs;
-    else
+    elseif (nargin == 2)
         varargout{1} = matrix_IDs(contains(matrix_IDs, ...
                                            strcat(varargin{2}, '/')));
+    else
+        update_git_group(varargin{2}, varargin{3});
     end
 elseif startsWith('help', varargin{1})
     if (nargin == 1)
@@ -477,6 +481,50 @@ end
          else
              error('No Contents.m exists for that group.')
          end  
+    end
+
+    % Create or update the specified git group.
+    function update_git_group(group_ID, repo_ID)
+        group_folder = strcat(root_path, '/', group_ID, '/');
+        % If group does not exist locally, create folders and clone it.
+        if ~isfolder(group_folder)
+            if startsWith(repo_ID, 'http')
+                status = system(strcat( ...
+                    "git clone ", repo_ID, " ", ...
+                    group_folder, 'private'), '-echo');
+            else
+                status = system(strcat( ...
+                    'git clone https://github.com/', repo_ID, ...
+                    ".git ", group_folder, 'private'), ...
+                    '-echo');
+            end
+            % Create the bridge file to the private/ dir.
+            fileID = fopen(strcat(group_folder, ...
+                                  'anymatrix_', group_ID, '.m'), 'w');
+            temp = strcat('function varargout = anymatrix_', ...
+                group_ID, '(matrix_name, varargin)\n', ...
+                'handle = str2func(matrix_name);\n', ...
+                '[varargout{1:nargout}]', ...
+                '= handle(varargin{1:nargin-1});\n end');
+            fprintf(fileID, temp);
+            fclose(fileID);
+
+            if (status == 0)
+                disp('Anymatrix remote group cloned.');
+            else
+                rmdir(group_folder, 's');
+            end
+        else % Group exists. Run git pull to update it.
+            if ~isfolder(strcat(group_folder, 'private/.git'))
+                error('Specified group is not a git group.');
+            else
+                old_folder = cd(strcat(group_folder, 'private/'));
+                system('git pull', '-echo');
+                cd(old_folder);
+            end
+        end
+        % Rescan the anymatrix file system.
+        [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
     end
 
 end
