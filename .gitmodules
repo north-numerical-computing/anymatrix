@@ -1,0 +1,3 @@
+[submodule "corrinv/private"]
+	path = corrinv/private
+	url = https://github.com/higham/matrices-correlation-invalid.git

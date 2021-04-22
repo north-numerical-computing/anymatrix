@@ -237,6 +237,10 @@ end
 
     % Top level function for scanning the files.
     function [c, g, m, p] = scan_filesystem()
+        % First, update groups that are git submodules.
+        oldDir = cd(root_path);
+        system('git submodule update --remote', '-echo');
+        cd(oldDir);
         c = scan_sets();
         g = scan_groups();
         m = scan_matrices(g);
