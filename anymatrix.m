@@ -18,38 +18,43 @@ function varargout = anymatrix(varargin)
 %       matlab   - other MATLAB matrices (not in gallery).
 %       nessie   - matrices from real-life networks.
 %
-%   Anymatrix accepts the following commands.
+%   Anymatrix accepts the following commands. All arguments are strings,
+%   except ones defined by the matrix M-files which might take various
+%   types of arguments.
 %
 %   help anymatrix - display this information.
 %   ANYMATRIX('all') - return all matrix IDs in the collection.
-%   ANYMATRIX('contents', '[group_ID]') - displays Contents.m of the group
-%       with a specified name [group_ID].
+%   ANYMATRIX('contents', group_ID) - displays Contents.m of the group
+%       with a specified name group_ID.
 %   G = ANYMATRIX('groups') - return the available groups.
-%   M = ANYMATRIX('groups', '[group_id]') - return matrix IDs that belong
-%       to the group with a specified name [group_id].
-%   ANYMATRIX('groups', '[group_id]', '[repository]') - clone or update
+%   M = ANYMATRIX('groups', group_id) - return matrix IDs that belong
+%       to the group with a specified name group_id.
+%   ANYMATRIX('groups', group_id, repository) - clone or update
 %       an anymatrix group stored in the specified repository.
-%   ANYMATRIX('help', '[matrix_id]') - list the help for a specified
-%       matrix (anymatrix('[matrix_id]', 'help') also accepted).
-%   M = ANYMATRIX('lookfor', [pattern]) - returns a list of matrix IDs
+%   ANYMATRIX('help', matrix_id) - list the help for a specified
+%       matrix (anymatrix(matrix_id, 'help') also accepted).
+%   M = ANYMATRIX('lookfor', pattern) - returns a list of matrix IDs
 %       whose help comments contain the specified char pattern.
 %   ANYMATRIX('properties') - show the list of recognized properties.
-%   ANYMATRIX('properties', '[matrix_id]') - list the properties of a
-%       specified matrix (anymatrix('[matrix_id]', 'properties') also
+%   ANYMATRIX('properties', matrix_id) - list the properties of a
+%       specified matrix (anymatrix(matrix_id, 'properties') also
 %       accepted).
-%   M = ANYMATRIX('properties', '[properties]') - list matrices having
+%   M = ANYMATRIX('properties', properties) - list matrices having
 %       the specified properties.
-%   S = ANYMATRIX('sets') - return the available sets.
-%   M = ANYMATRIX('sets', '[set_id]') - return matrix IDs that belong to
-%       the set with a specified name [set_id].
 %   ANYMATRIX('scan') - force a scan of the file system.
-%   [out1, ..., outK] = ANYMATRIX('[matrix_id]', in1, ..., inN) - get the
+%   S = ANYMATRIX('sets') - return the available sets.
+%   M = ANYMATRIX('sets', set_id) - return matrix IDs that belong to
+%       the set with a specified name set_id.
+%   ANYMATRIX('test') - run tests of all groups, where available.
+%   ANYMATRIX('test', group_ID) - run tests of the specified group, if
+%       available.
+%   [out1, ..., outK] = ANYMATRIX(matrix_id, in1, ..., inN) - get the
 %       matrix with a specified matrix id and parameters (if any) in1 to
 %       inN. Some matrices supply multiple output arguments.
 %
 %   Shorthand commands with one or more of the starting letters are also
 %   accepted, for example 'c', 'cont', 'g', 'gr', 'h', 'l', 'p', 'prop',
-%   'sc', 'se'.
+%   'sc', 'se', 't'.
 %
 %   Anymatrix supports logical queries to search for matrices by
 %   properties. In the command anymatrix('properties', '[properties]'), the
@@ -139,7 +144,7 @@ elseif (nargin == 1)
     if any(startsWith({'lookfor', 'contents'}, varargin{1}))
         error('Please specify one argument to this command.');
     elseif ~any(startsWith({'properties', 'groups', ...
-            'sets', 'all', 'scan', 'help'}, varargin{1}))
+            'sets', 'all', 'scan', 'help', 'test'}, varargin{1}))
         error('Anymatrix command was not recognized.');
     end
 % Check other commands that don't contain matrix IDs in the first arg.
@@ -155,7 +160,7 @@ elseif nargin == 2
         end
     elseif any(startsWith({'help', 'properties'}, varargin{2}))
         error('Specified matrix ID was not found.');
-    elseif any(startsWith({'groups', 'contents'}, varargin{1}))
+    elseif any(startsWith({'groups', 'contents', 'test'}, varargin{1}))
         if ~ismember(varargin{2}, group_IDs)
             error('The specified group ID was not found.');
         end
@@ -195,6 +200,8 @@ elseif startsWith('help', varargin{1})
     else
         show_matrix_help(varargin{2});
     end
+elseif startsWith('lookfor', varargin{1})
+    varargout{1} = lookfor_term(varargin{2});
 elseif startsWith('properties', varargin{1})
     if (nargin == 1)
         varargout{1} = supported_properties;
@@ -208,8 +215,6 @@ elseif startsWith('scan', varargin{1})
     supported_properties = prop_list();
     [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
     disp('Anymatrix scanning done.');
-elseif startsWith('lookfor', varargin{1})
-    varargout{1} = lookfor_term(varargin{2});
 elseif startsWith('sets', varargin{1})
     if (nargin == 1)
         varargout{1} = set_IDs;
@@ -219,6 +224,14 @@ elseif startsWith('sets', varargin{1})
             strcat(root_path, '/sets/', varargin{2}, '.txt'), ...
             'Delimiter', ':', 'CommentStyle', '%', 'LineEnding', ...
             ';', 'Whitespace', ' \n'), '[\n\r]+',' ');
+    end
+elseif startsWith('test', varargin{1})
+    if (nargin == 1)
+        for group = group_IDs.'
+            run_group_tests(group{1});
+        end
+    else
+        run_group_tests(varargin{2});
     end
 else
     if (nargin > 1) && ischar(varargin{2}) && ...
@@ -525,6 +538,18 @@ end
         end
         % Rescan the anymatrix file system.
         [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
+    end
+
+    % Run the testsuite of a particular group.
+    function run_group_tests(group_ID)
+        handle = str2func(strcat('anymatrix_', group_ID));
+        test_func = strcat('test_', group_ID);
+        if (isfile(strcat(root_path, '/', group_ID, '/private/', ...
+                          test_func, '.m')))
+            handle(test_func);
+        else
+            disp('This group does not contain any tests.');
+        end
     end
 
 end
