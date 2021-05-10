@@ -1,4 +1,3 @@
 function out = test_hankel(M)
-out = ~isequal(hankel(M(:,1),M(end,:)));
+out = isequal(M, hankel(M(:,1),M(end,:)));
 end
-
