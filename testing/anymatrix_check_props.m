@@ -20,7 +20,7 @@ P = anymatrix('p', matrix_ID);
 all_properties_ok = true;
 
 for prop = P.'
-    test_func_name = strcat('test_', prop{1});
+    test_func_name = strcat('test_', lower(prop{1}));
     if isfile(strcat(root_path, '/private/', test_func_name, '.m'))
         handle = str2func(test_func_name);
         if ~handle(M)
