@@ -9,4 +9,4 @@ function test_hadamard_hadamard(testcase)
                 A, 'hadamard/hadamard'));
         end
     end
- end
+end
