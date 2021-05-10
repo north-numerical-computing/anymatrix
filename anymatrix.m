@@ -95,6 +95,10 @@ if verLessThan('matlab','9.9')
     error('MATLAB 2020b or newer is required.')
 end
 
+% Matrix ID pattern
+matrix_ID_pat = alphanumericsPattern + '/' + ...
+    asManyOfPattern(alphanumericsPattern | characterListPattern("_"));
+
 % Convert inputs to char arrays if supplied as strings.
 if (nargin > 0) && isstring(varargin{1})
     varargin{1} = convertStringsToChars(varargin{1});
@@ -134,8 +138,7 @@ elseif ~ischar(varargin{1})
     error('Anymatrix command was not recognized');
 % If first arg is an existent matrix ID, we don't check the other args and
 % leave the matrix generator to deal with any issues.
-elseif matches(varargin{1}, ...
-        alphanumericsPattern + '/' + alphanumericsPattern)
+elseif matches(varargin{1}, matrix_ID_pat)
     if ~ismember(varargin{1}, matrix_IDs)
         error('Specified matrix ID was not found.');
     end
@@ -153,8 +156,7 @@ elseif nargin == 2
         error('Second argument in this command must be a char array.');
     elseif startsWith({'help'}, varargin{1}) || ...
         (startsWith('properties', varargin{1}) && ...
-         matches(varargin{2}, ...
-         alphanumericsPattern + '/' + alphanumericsPattern))
+         matches(varargin{2}, matrix_ID_pat))
         if ~ismember(varargin{2}, matrix_IDs)
             error('Specified matrix ID was not found.');
         end
@@ -205,8 +207,7 @@ elseif startsWith('lookfor', varargin{1})
 elseif startsWith('properties', varargin{1})
     if (nargin == 1)
         varargout{1} = supported_properties;
-    elseif (matches(varargin{2}, ...
-        alphanumericsPattern + '/' + alphanumericsPattern))
+    elseif matches(varargin{2}, matrix_ID_pat)
         varargout{1} = properties{strcmp(matrix_IDs, varargin{2})};
     else
         varargout{1} = search_by_properties(varargin{2});
