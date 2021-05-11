@@ -67,35 +67,34 @@ for mat = M.'
             end
             
             if (ok_without_args)
-                temp = strcat(temp, "A = anymatrix('", ...
-                    matrix_ID, "');\n", ...
-                    "    verifyTrue(testcase,", ...
-                    "anymatrix_check_props(A, '", ...
-                    matrix_ID, "'));\n");
+                temp = strcat(temp, ...
+                    "    A = anymatrix('", matrix_ID, "');\n", ...
+                    "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
             end
             
-            % Try inputting one, two, or three random args.
-            args = fix((rand(1, 10) * 30 + 4) / 0.5) * 0.5;
+            % Try inputting one, two, or three random args in a certain
+            % interval with steps of 0.5.
+            args = fix((rand(1, 10) * 26 + 4) / 0.5) * 0.5;
             for arg = args % Arbitrary set of test arguments.
                 try
                     anymatrix(matrix_ID, arg);
                     temp = strcat(temp, ...
                         "    A = anymatrix('", matrix_ID, "',", num2str(arg), ");\n", ...
-                        "    verifyTrue(testcase, anymatrix_check_props(A, '", matrix_ID, "'));\n");
+                        "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                 catch
                 end
                 try
                     anymatrix(matrix_ID, arg, arg);
                     temp = strcat(temp, ...
                         "    A = anymatrix('", matrix_ID, "',", num2str(arg), ",", num2str(arg), ");\n", ...
-                        "    verifyTrue(testcase, anymatrix_check_props(A, '", matrix_ID, "'));\n");
+                        "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                 catch
                 end
                 try
                     anymatrix(matrix_ID, arg, arg, arg);
                     temp = strcat(temp, ...
                         "    A = anymatrix('", matrix_ID, "',", num2str(arg), ",", num2str(arg), ",", num2str(arg), ");\n", ...
-                        "    verifyTrue(testcase, anymatrix_check_props(A, '", matrix_ID, "'));\n");
+                        "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                 catch
                     continue
                 end
@@ -107,5 +106,12 @@ for mat = M.'
 end
 fclose(fileID);
 
-test_results = run(anymatrix_func_based_tests);
+% Configure a test runner
+runner = matlab.unittest.TestRunner.withNoPlugins;
+import matlab.unittest.plugins.TestRunProgressPlugin
+import matlab.unittest.plugins.DiagnosticsOutputPlugin
+runner.addPlugin(TestRunProgressPlugin.withVerbosity(2))
+runner.addPlugin(DiagnosticsOutputPlugin('OutputDetail', 2))
+
+test_results = runner.run(anymatrix_func_based_tests);
 table(test_results)

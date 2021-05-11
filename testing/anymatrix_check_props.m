@@ -1,4 +1,4 @@
-function out = anymatrix_check_props(M, matrix_ID)
+function out = anymatrix_check_props(M, matrix_ID, testcase)
 %ANYMATRIX_CHECK_PROPS  Confirm matrix properties.
 %   This function loops through the properties of a given anymatrix matrix
 %   and checks that an instance of that matrix given as a first argument
@@ -23,10 +23,8 @@ for prop = P.'
     test_func_name = strcat('test_', lower(prop{1}));
     if isfile(strcat(root_path, '/private/', test_func_name, '.m'))
         handle = str2func(test_func_name);
-        if ~handle(M)
-            all_properties_ok = false;
-            warning("Matrix %s is not %s. \n", matrix_ID, prop{1});
-        end
+        verifyTrue(testcase, handle(M), ...
+            strcat("Matrix ", matrix_ID, " is not ", prop{1}, "."));
     end
 end
 

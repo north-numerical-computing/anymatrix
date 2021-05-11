@@ -1,15 +1,15 @@
 function test_gallery_neumann(testcase)
     A = anymatrix('gallery/neumann',[5, 4]);
-    verifyTrue(testcase, anymatrix_check_props(A, 'gallery/neumann'));
+    anymatrix_check_props(A, 'gallery/neumann',testcase);
 end
 
 function test_gallery_wilk(testcase)
     A = anymatrix('gallery/wilk',3);
-    verifyTrue(testcase, anymatrix_check_props(A, 'gallery/wilk'));
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
     A = anymatrix('gallery/wilk',4);
-    verifyTrue(testcase, anymatrix_check_props(A, 'gallery/wilk'));
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
     A = anymatrix('gallery/wilk',5);
-    verifyTrue(testcase, anymatrix_check_props(A, 'gallery/wilk'));
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
     A = anymatrix('gallery/wilk',21);
-    verifyTrue(testcase, anymatrix_check_props(A, 'gallery/wilk'));
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
 end
