@@ -12,4 +12,4 @@ function test_gallery_wilk(testcase)
     anymatrix_check_props(A, 'gallery/wilk', testcase);
     A = anymatrix('gallery/wilk',21);
     anymatrix_check_props(A, 'gallery/wilk', testcase);
-endn
+end
