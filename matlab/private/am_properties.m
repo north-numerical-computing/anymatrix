@@ -16,6 +16,5 @@ P = {
     'spiral', {'integer', 'positive'}
     'toeplitz', {'toeplitz', 'square', 'rectangular'}
     'vander', {}
-    'wilkinson', {'symmetric', 'indefinite' 'tridiagonal', 'integer', ...
-                  'nonnegative'}
+    'wilkinson', {'symmetric', 'indefinite' 'tridiagonal', 'nonnegative'}
     };
