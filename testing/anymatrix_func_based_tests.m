@@ -2991,3 +2991,111 @@ function test_nessie_whiskydist(testcase)
     A = anymatrix('nessie/whiskydist');
     anymatrix_check_props(A, 'nessie/whiskydist', testcase);
 end
+
+function test_corrinv_bccd16(testcase)
+    A = anymatrix('corrinv/bccd16');
+    anymatrix_check_props(A, 'corrinv/bccd16', testcase);
+end
+
+function test_corrinv_beyu11(testcase)
+    A = anymatrix('corrinv/beyu11');
+    anymatrix_check_props(A, 'corrinv/beyu11', testcase);
+end
+
+function test_corrinv_bhwi01(testcase)
+    A = anymatrix('corrinv/bhwi01');
+    anymatrix_check_props(A, 'corrinv/bhwi01', testcase);
+end
+
+function test_corrinv_cor1399(testcase)
+    A = anymatrix('corrinv/cor1399');
+    anymatrix_check_props(A, 'corrinv/cor1399', testcase);
+end
+
+function test_corrinv_cor3120(testcase)
+    A = anymatrix('corrinv/cor3120');
+    anymatrix_check_props(A, 'corrinv/cor3120', testcase);
+end
+
+function test_corrinv_fing97(testcase)
+    A = anymatrix('corrinv/fing97');
+    anymatrix_check_props(A, 'corrinv/fing97', testcase);
+end
+
+function test_corrinv_high02(testcase)
+    A = anymatrix('corrinv/high02');
+    anymatrix_check_props(A, 'corrinv/high02', testcase);
+end
+
+function test_corrinv_mmb13(testcase)
+    A = anymatrix('corrinv/mmb13');
+    anymatrix_check_props(A, 'corrinv/mmb13', testcase);
+end
+
+function test_corrinv_tec03(testcase)
+    A = anymatrix('corrinv/tec03');
+    anymatrix_check_props(A, 'corrinv/tec03', testcase);
+end
+
+function test_corrinv_treshape(testcase)
+    A = anymatrix('corrinv/treshape',11);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',11,11);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5,16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',12.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',12.5,12.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',27);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',27,27);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',7);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',7,7);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',26);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',26,26);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5,16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',9.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',9.5,9.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',16.5,16.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',25.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+    A = anymatrix('corrinv/treshape',25.5,25.5);
+    anymatrix_check_props(A, 'corrinv/treshape', testcase);
+end
+
+function test_corrinv_tyda99r1(testcase)
+    A = anymatrix('corrinv/tyda99r1');
+    anymatrix_check_props(A, 'corrinv/tyda99r1', testcase);
+end
+
+function test_corrinv_tyda99r2(testcase)
+    A = anymatrix('corrinv/tyda99r2');
+    anymatrix_check_props(A, 'corrinv/tyda99r2', testcase);
+end
+
+function test_corrinv_tyda99r3(testcase)
+    A = anymatrix('corrinv/tyda99r3');
+    anymatrix_check_props(A, 'corrinv/tyda99r3', testcase);
+end
+
+function test_corrinv_usgs13(testcase)
+    A = anymatrix('corrinv/usgs13');
+    anymatrix_check_props(A, 'corrinv/usgs13', testcase);
+end

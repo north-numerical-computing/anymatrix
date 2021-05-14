@@ -49,7 +49,7 @@ P = {
     'moler', {'symmetric', 'positive definite', 'eigenvalues', 'integer'}
     'neumann', {'rank deficient', 'sparse', 'diagonally dominant'}
     'normaldata', {'rectangular', 'parameter-dependent', 'random'} 
-    'orthog', {'orthogonal', 'real', 'complex'} 
+    'orthog', {'orthogonal'} 
     'parter', {'toeplitz'} 
     'pei', {'symmetric', 'positive definite', 'integer', 'positive',...
             'parameter-dependent'} 

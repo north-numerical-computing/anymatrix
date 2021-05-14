@@ -34,5 +34,7 @@ if s < 0, error('Vector X does not satisfy required inequality.'), end
 
 % Get Soules matrix.
 Q = soules(n);
-A = Q*diag(x)*Q';
+A = Q*(x.*Q');  % Implicit expansion. Same as A = Q*diag(x)*Q'.
 A = A/x(1);
+A = (A + A')/2; % Symmetrize (nonsymmetric because of rounding errors).
+

@@ -10,7 +10,7 @@ P = {
                 'ill-conditioned'}
     'magic', {'integer','positive'}
     'pascal', {'integer', 'positive', 'involutory',...
-               'totally nonnegative', 'triangular', 'ill-conditioned'}
+               'totally nonnegative', 'ill-conditioned'}
     'rosser', {'fixed size', 'symmetric', 'indefinite', 'integer', ...
                'positive', 'rank deficient'}
     'spiral', {'integer', 'positive'}

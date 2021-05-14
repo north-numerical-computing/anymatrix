@@ -26,3 +26,4 @@ if n ~= 1 && n < p
 end
 
 P = eye(n) - 2*Z*pinv(Z);
+P = (P + P')/2;  % Symmetrize (nonsymmetric because of rounding errors).
