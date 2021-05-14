@@ -1,7 +1,7 @@
 % Top-level script to start the tests.
 
 % Set this to '1' to force regenerate all tests.
-regenerate_tests = 1;
+regenerate_tests = 0;
 
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 
@@ -85,7 +85,6 @@ for mat = M.'
                         "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ");\n", ...
                         "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                 catch
-                    continue
                 end
                 
                 for second_arg = second_args
@@ -95,7 +94,6 @@ for mat = M.'
                             "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ",", num2str(second_arg), ");\n", ...
                             "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                     catch
-                        continue
                     end
                 
                     for third_arg = third_args
@@ -105,7 +103,6 @@ for mat = M.'
                                 "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ",", num2str(second_arg), ",", num2str(third_arg), ");\n", ...
                                 "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                         catch
-                            continue
                         end
                     end
                 end

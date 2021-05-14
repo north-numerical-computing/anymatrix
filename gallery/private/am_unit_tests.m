@@ -13,3 +13,10 @@ function test_gallery_wilk(testcase)
     A = anymatrix('gallery/wilk',21);
     anymatrix_check_props(A, 'gallery/wilk', testcase);
 end
+
+function test_gallery_integerdata(testcase)
+    A = anymatrix('gallery/integerdata', 6, [6, 4], 2);
+    anymatrix_check_props(A, 'gallery/integerdata', testcase);
+    A = anymatrix('gallery/integerdata', [10 20], 1, 2, 3, 17);
+    anymatrix_check_props(A, 'gallery/integerdata', testcase);
+end

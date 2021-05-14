@@ -2622,7 +2622,27 @@ function test_gallery_hanowa(testcase)
     anymatrix_check_props(A, 'gallery/hanowa', testcase);
 end
 
+function test_gallery_neumann(testcase)
+    A = anymatrix('gallery/neumann',[5, 4]);
+    anymatrix_check_props(A, 'gallery/neumann', testcase);
+end
+
+function test_gallery_wilk(testcase)
+    A = anymatrix('gallery/wilk',3);
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
+    A = anymatrix('gallery/wilk',4);
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
+    A = anymatrix('gallery/wilk',5);
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
+    A = anymatrix('gallery/wilk',21);
+    anymatrix_check_props(A, 'gallery/wilk', testcase);
+end
+
 function test_gallery_integerdata(testcase)
+    A = anymatrix('gallery/integerdata', 6, [6, 4], 2);
+    anymatrix_check_props(A, 'gallery/integerdata', testcase);
+    A = anymatrix('gallery/integerdata', [10 20], 1, 2, 3, 17);
+    anymatrix_check_props(A, 'gallery/integerdata', testcase);
 end
 
 function test_gallery_invhess(testcase)
@@ -3186,9 +3206,33 @@ end
 function test_gallery_krylov(testcase)
     A = anymatrix('gallery/krylov',10);
     anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',10,0.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',10,1,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',10,1.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',10,2,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
     A = anymatrix('gallery/krylov',20);
     anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',20,0.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',20,1,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',20,1.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',20,2,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
     A = anymatrix('gallery/krylov',30);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',30,0.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',30,1,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',30,1.5,1);
+    anymatrix_check_props(A, 'gallery/krylov', testcase);
+    A = anymatrix('gallery/krylov',30,2,1);
     anymatrix_check_props(A, 'gallery/krylov', testcase);
 end
 
@@ -3591,23 +3635,79 @@ function test_gallery_moler(testcase)
     anymatrix_check_props(A, 'gallery/moler', testcase);
 end
 
-function test_gallery_neumann(testcase)
-    A = anymatrix('gallery/neumann',[5, 4]);
-    anymatrix_check_props(A, 'gallery/neumann', testcase);
-end
-
-function test_gallery_wilk(testcase)
-    A = anymatrix('gallery/wilk',3);
-    anymatrix_check_props(A, 'gallery/wilk', testcase);
-    A = anymatrix('gallery/wilk',4);
-    anymatrix_check_props(A, 'gallery/wilk', testcase);
-    A = anymatrix('gallery/wilk',5);
-    anymatrix_check_props(A, 'gallery/wilk', testcase);
-    A = anymatrix('gallery/wilk',21);
-    anymatrix_check_props(A, 'gallery/wilk', testcase);
-end
-
 function test_gallery_normaldata(testcase)
+    A = anymatrix('gallery/normaldata',10,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,2,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,2,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,2,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',10,2,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,2,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,2,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,2,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',20,2,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,2,0.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,2,1);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,2,1.5);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata',30,2,2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
 end
 
 function test_gallery_orthog(testcase)
@@ -4807,9 +4907,105 @@ end
 function test_gallery_tridiag(testcase)
     A = anymatrix('gallery/tridiag',10);
     anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,0.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,0.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,0.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,0.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,1.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,2,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,2,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,2,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',10,2,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
     A = anymatrix('gallery/tridiag',20);
     anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,0.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,0.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,0.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,0.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,1.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,2,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,2,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,2,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',20,2,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
     A = anymatrix('gallery/tridiag',30);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,0.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,0.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,0.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,0.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1.5,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1.5,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1.5,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,1.5,2);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,2,0.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,2,1);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,2,1.5);
+    anymatrix_check_props(A, 'gallery/tridiag', testcase);
+    A = anymatrix('gallery/tridiag',30,2,2);
     anymatrix_check_props(A, 'gallery/tridiag', testcase);
 end
 
@@ -4895,9 +5091,141 @@ function test_gallery_triw(testcase)
 end
 
 function test_gallery_uniformdata(testcase)
+    A = anymatrix('gallery/uniformdata',10,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,2,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,2,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,2,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',10,2,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,2,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,2,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,2,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',20,2,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,2,0.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,2,1);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,2,1.5);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/uniformdata',30,2,2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
 end
 
 function test_gallery_wathen(testcase)
+    A = anymatrix('gallery/wathen',10,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,1,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,1,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,1,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,1,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,2,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,2,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,2,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',10,2,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,1,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,1,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,1,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,1,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,2,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,2,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,2,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',20,2,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,1,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,1,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,1,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,1,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,2,0.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,2,1);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,2,1.5);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+    A = anymatrix('gallery/wathen',30,2,2);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
 end
 
 function test_hadamard_hadamard(testcase)
