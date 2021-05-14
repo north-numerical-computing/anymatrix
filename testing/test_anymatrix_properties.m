@@ -1,7 +1,7 @@
 % Top-level script to start the tests.
 
 % Set this to '1' to force regenerate all tests.
-regenerate_tests = 0;
+regenerate_tests = 1;
 
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 
@@ -74,29 +74,40 @@ for mat = M.'
             
             % Try inputting one, two, or three random args in a certain
             % interval with steps of 0.5.
-            args = fix((rand(1, 10) * 26 + 4) / 0.5) * 0.5;
-            for arg = args % Arbitrary set of test arguments.
+            %args = fix((rand(1, 10) * 26) / 0.5) * 0.5;
+            first_args = [10, 20, 30];
+            second_args = 0.5:0.5:2;
+            third_args = 0.5:0.5:2;
+            for first_arg = first_args % Arbitrary set of test arguments.
                 try
-                    anymatrix(matrix_ID, arg);
+                    anymatrix(matrix_ID, first_arg);
                     temp = strcat(temp, ...
-                        "    A = anymatrix('", matrix_ID, "',", num2str(arg), ");\n", ...
-                        "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
-                catch
-                end
-                try
-                    anymatrix(matrix_ID, arg, arg);
-                    temp = strcat(temp, ...
-                        "    A = anymatrix('", matrix_ID, "',", num2str(arg), ",", num2str(arg), ");\n", ...
-                        "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
-                catch
-                end
-                try
-                    anymatrix(matrix_ID, arg, arg, arg);
-                    temp = strcat(temp, ...
-                        "    A = anymatrix('", matrix_ID, "',", num2str(arg), ",", num2str(arg), ",", num2str(arg), ");\n", ...
+                        "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ");\n", ...
                         "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
                 catch
                     continue
+                end
+                
+                for second_arg = second_args
+                    try
+                        anymatrix(matrix_ID, first_arg, second_arg);
+                        temp = strcat(temp, ...
+                            "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ",", num2str(second_arg), ");\n", ...
+                            "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
+                    catch
+                        continue
+                    end
+                
+                    for third_arg = third_args
+                        try
+                            anymatrix(matrix_ID, first_arg, second_arg, third_arg);
+                            temp = strcat(temp, ...
+                                "    A = anymatrix('", matrix_ID, "',", num2str(first_arg), ",", num2str(second_arg), ",", num2str(third_arg), ");\n", ...
+                                "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
+                        catch
+                            continue
+                        end
+                    end
                 end
             end
             temp = strcat(temp, 'end');
