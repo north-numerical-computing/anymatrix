@@ -1,5 +1,5 @@
 function test_matlab_toeplitz(testcase)
-    A = anymatrix('matlab/toeplitz',[1, 1, 1], [2, 2, 2]);
+    A = anymatrix('matlab/toeplitz',[1, 1, 1], [1, 2, 2]);
     anymatrix_check_props(A, 'matlab/toeplitz', testcase);
 end
 

@@ -1,10 +1,8 @@
 function out = anymatrix_check_props(M, matrix_ID, testcase)
 %ANYMATRIX_CHECK_PROPS  Confirm matrix properties.
 %   This function loops through the properties of a given anymatrix matrix
-%   and checks that an instance of that matrix given as a first argument
+%   and checks that an instance of that matrix given in the first argument
 %   has those properties.
-%
-%   A warning is thrown for any properties that do not apply.
 %
 %   'false' is returned if any of the properties do not apply. Those
 %   properties for which test function is not found are not taken into
