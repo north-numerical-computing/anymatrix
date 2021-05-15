@@ -8,7 +8,7 @@ anymatrix('sc');
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 
 % Check which properties recognized by anymatrix have tests and throw
-% warnings for those taht can't be tested.
+% warnings for those that can't be tested.
 P = anymatrix('p');
 for prop = P.'
     if ~isfile(strcat(root_path, '/private/test_', prop{1}, '.m'))
