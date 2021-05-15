@@ -1,4 +1,4 @@
-% ANYMATRIX - a MATLAB matrix collection.
+% Anymatrix - a MATLAB matrix collection.
 % Version v0.3 15-May-2021
 %
 %   The built-in collection contains 123 matrices organized in 6 groups:
@@ -10,3 +10,6 @@
 %       hadamard - a large collection of Hadamard matrices.
 %       matlab   - other MATLAB matrices (not in gallery).
 %       nessie   - matrices from real-life networks.
+%
+%   The matrices are accessed through the function anymatrix.
+    
