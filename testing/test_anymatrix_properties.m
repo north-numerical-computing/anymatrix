@@ -1,7 +1,7 @@
 % Top-level script to start the tests.
 
 % Set this to '1' to force regenerate all tests.
-regenerate_tests = 1;
+regenerate_tests = 0;
 
 anymatrix('sc');
 
