@@ -20,3 +20,22 @@ function test_gallery_integerdata(testcase)
     A = anymatrix('gallery/integerdata', [10 20], 1, 2, 3, 17);
     anymatrix_check_props(A, 'gallery/integerdata', testcase);
 end
+
+function test_gallery_uniformdata(testcase)
+    A = anymatrix('gallery/uniformdata', [6, 4], 2);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+    A = anymatrix('gallery/integerdata', 1, 2, 3, 17);
+    anymatrix_check_props(A, 'gallery/uniformdata', testcase);
+end
+
+function test_gallery_wathen(testcase)
+    A = anymatrix('gallery/wathen', 10, 10);
+    anymatrix_check_props(A, 'gallery/wathen', testcase);
+end
+
+function test_gallery_normaldata(testcase)
+    A = anymatrix('gallery/normaldata', [6, 4], 2);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+    A = anymatrix('gallery/normaldata', 1, 2, 3, 17);
+    anymatrix_check_props(A, 'gallery/normaldata', testcase);
+end
