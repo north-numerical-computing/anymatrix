@@ -60,7 +60,7 @@ P = {
     'randcorr', {'parameter-dependent', 'random', 'correlation'} 
     'randhess', {'hessenberg', 'orthogonal', 'random',...
                  'parameter-dependent'} 
-    'randjorth', {'random', 'parameter-dependent'} 
+    'randjorth', {'random', 'parameter-dependent', 'pseudo-orthogonal'} 
     'rando', {'rectangular', 'random', 'integer'} 
     'randsvd', {'orthogonal', 'rectangular', 'square', 'random'} 
     'redheff', {'integer', 'nonnegative', 'eigenvalues'} 
