@@ -14,9 +14,9 @@
 %   traincorr  - Correlation matrix associated with Scottish train travel times.
 %   usshelf    - Adjacency matrix of network for Northeast US continental shelf.
 %   whiskycorr - Correlation matrix associated with malt whisky tasting.
-%   whiskydist - Matrix of Euclidean distance between whisky distilleries.
+%   whiskydist - Matrix of Euclidean distances between whisky distilleries.
 For documentation see 
-- https://outreach.mathstat.strath.ac.uk/outreach/nessie/nessie_transport.html
+- https://outreach.mathstat.strath.ac.uk/outreach/nessie/
 - Alan Taylor and Desmond J. Higham, NESSIE: Network Example Source
   Supporting Innovative Experimentation, in Ernesto Estrada, Maria
   Fox, Desmond J. Higham and Gian-Luca Oppo, eds, Network Science: Complexity
