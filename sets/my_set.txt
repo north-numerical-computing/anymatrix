@@ -1,5 +1,5 @@
 % Comments are preceded by a percentage sign.
-% A newline is marked by a semicolon;
+% Comments and notes are terminated by semicolons;
 
 core/dembo9:  Here place some notes about the dembo9 matrix.;
 
