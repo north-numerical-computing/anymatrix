@@ -1818,3 +1818,6 @@ function test_nessie_whiskydist(testcase)
     A = anymatrix('nessie/whiskydist');
     anymatrix_check_props(A, 'nessie/whiskydist', testcase);
 end
+
+function test_hpl_ai_hpl_ai_matrix(testcase)
+end

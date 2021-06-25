@@ -11,5 +11,5 @@ M = {'banded', {'tridiagonal'}
      'orthogonal', {'permutation'}
      'symmetric', {'correlation', 'hankel'}
      'positive definite', {'correlation'}
-     'totally positive', {'totally negative'}
+     'totally nonnegative', {'totally positive'}
     };
