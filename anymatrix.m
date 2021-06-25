@@ -68,8 +68,8 @@ function varargout = anymatrix(varargin)
 %   variables use anymatrix('scan').
 %
 %   Documentation:
-%   Nicholas J. Higham and Mantas Mikaitis, Anymatrix: Extendable MATLAB
-%   Matrix Collections, in preparation.
+%   Nicholas J. Higham and Mantas Mikaitis, Anymatrix: An Extendable MATLAB
+%   Matrix Collection, User's Guide, in preparation.
 
 %   References and acknowledgments.
 % 
@@ -129,124 +129,116 @@ if isempty(files_scanned)
     disp('Anymatrix scanning done.');
 end
 
-% Parse the arguments passed to anymatrix and capture some common errors.
 if nargin == 0
     help anymatrix;
     return;
-% No commands that accept non-char-array first arg.
 elseif ~ischar(varargin{1})
     error('Anymatrix command was not recognized');
-% If first arg is an existent matrix ID, we don't check the other args and
-% leave the matrix generator to deal with any issues.
-elseif matches(varargin{1}, matrix_ID_pat)
+end
+
+% Parse the arguments passed to anymatrix.
+command = varargin{1};
+if (nargin >= 2)
+    arg = varargin{2};
+    if ischar(varargin{2}) && any(startsWith({'properties', ...
+            'groups', 'sets', 'all', 'scan', 'help', 'test', ...
+            'lookfor', 'contents'}, varargin{2}))
+        command = varargin{2};
+        arg = varargin{1};
+    end
+end
+
+% Capture some common errors in the arguments.
+if matches(command, matrix_ID_pat)
     if ~ismember(varargin{1}, matrix_IDs)
         error('Specified matrix ID was not found.');
     end
-% Check for single argument commands.
-elseif (nargin == 1)
-    if any(startsWith({'lookfor', 'contents'}, varargin{1}))
-        error('Please specify one argument to this command.');
-    elseif ~any(startsWith({'properties', 'groups', ...
-            'sets', 'all', 'scan', 'help', 'test'}, varargin{1}))
+elseif ~any(startsWith({'properties', 'groups', ...
+            'sets', 'all', 'scan', 'help', 'test', 'contents', ...
+            'lookfor'}, command))
         error('Anymatrix command was not recognized.');
+elseif (nargin == 1)
+    if any(startsWith({'lookfor', 'contents'}, command))
+        error('Please specify one more argument.');
     end
-% Check other commands that don't contain matrix IDs in the first arg.
 elseif nargin == 2
-    if ~ischar(varargin{2})
-        error('Second argument in this command must be a char array.');
-    elseif startsWith({'help'}, varargin{1}) || ...
-        (startsWith('properties', varargin{1}) && ...
-         matches(varargin{2}, matrix_ID_pat))
-        if ~ismember(varargin{2}, matrix_IDs)
+    if ~ischar(arg)
+        error('This anymatrix command requires string arguments.');
+    elseif startsWith({'help'}, command) || ...
+        (startsWith('properties', command) && ...
+         matches(arg, matrix_ID_pat))
+        if ~ismember(arg, matrix_IDs)
             error('Specified matrix ID was not found.');
         end
-    elseif any(startsWith({'help', 'properties'}, varargin{2}))
-        error('Specified matrix ID was not found.');
-    elseif any(startsWith({'groups', 'contents', 'test'}, varargin{1}))
-        if ~ismember(varargin{2}, group_IDs)
+    elseif any(startsWith({'groups', 'contents', 'test'}, command))
+        if ~ismember(arg, group_IDs)
             error('The specified group ID was not found.');
         end
-    elseif startsWith('contents', varargin{2})
-        if ~ismember(varargin{1}, group_IDs)
-            error("The specified group ID was not found");
+    elseif startsWith('sets', command)
+        if ~ismember(arg, set_IDs)
+            error('ID of the specified set was not found.');
         end
-    elseif startsWith('sets', varargin{1}) && ~ismember( ...
-            varargin{2}, set_IDs)
-        error('ID of the specified set was not found.');
-    elseif ~any(startsWith({'groups', 'sets', ...
-            'properties', 'help', 'contents', ...
-            'lookfor'}, varargin{1}))
-        error('Anymatrix command was not recognized.');
     end
-elseif (nargin > 2) && (~startsWith('groups', varargin{1}) || nargin > 3)
+elseif (nargin > 3) || ((nargin == 3) && ...
+        ~startsWith('groups', varargin{1}))
     error('Anymatrix command was not recognized (too many inputs).');
 end
 
-% Execute the specified command.
-if startsWith('all', varargin{1})
+% Execute the anymatrix specified command.
+if startsWith('all', command)
     varargout{1} = matrix_IDs;
-elseif startsWith('contents', varargin{1})
-    show_contents(varargin{2});
-elseif startsWith('groups', varargin{1})
+elseif startsWith('contents', command)
+    show_contents(arg);
+elseif startsWith('groups', command)
     if (nargin == 1)
         varargout{1} = group_IDs;
     elseif (nargin == 2)
         varargout{1} = matrix_IDs(contains(matrix_IDs, ...
-                                           strcat(varargin{2}, '/')));
+                                           strcat(arg, '/')));
     else
         update_git_group(varargin{2}, varargin{3});
     end
-elseif startsWith('help', varargin{1})
+elseif startsWith('help', command)
     if (nargin == 1)
         help anymatrix;
     else
-        show_matrix_help(varargin{2});
+        show_matrix_help(arg);
     end
-elseif startsWith('lookfor', varargin{1})
-    varargout{1} = lookfor_term(varargin{2});
-elseif startsWith('properties', varargin{1})
+elseif startsWith('lookfor', command)
+    varargout{1} = lookfor_term(arg);
+elseif startsWith('properties', command)
     if (nargin == 1)
         varargout{1} = supported_properties;
-    elseif matches(varargin{2}, matrix_ID_pat)
-        varargout{1} = properties{strcmp(matrix_IDs, varargin{2})};
+    elseif matches(arg, matrix_ID_pat)
+        varargout{1} = properties{strcmp(matrix_IDs, arg)};
     else
-        varargout{1} = search_by_properties(varargin{2});
+        varargout{1} = search_by_properties(arg);
     end
-elseif startsWith('scan', varargin{1})
+elseif startsWith('scan', command)
     supported_properties = prop_list();
     [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
     disp('Anymatrix scanning done.');
-elseif startsWith('sets', varargin{1})
+elseif startsWith('sets', command)
     if (nargin == 1)
         varargout{1} = set_IDs;
     else
-        % NOTE: Preload all sets instead of reading a file everytime?
+        % NOTE: If becomes slow, preload all sets instead of reading
+        % from a file everytime.
         varargout{1} = regexprep(readcell( ...
-            strcat(root_path, '/sets/', varargin{2}, '.txt'), ...
+            strcat(root_path, '/sets/', arg, '.txt'), ...
             'Delimiter', ':', 'CommentStyle', '%', 'LineEnding', ...
             ';', 'Whitespace', ' \n'), '[\n\r]+',' ');
     end
-elseif startsWith('test', varargin{1})
+elseif startsWith('test', command)
     if (nargin == 1)
         for group = group_IDs.'
             run_group_tests(group{1});
         end
     else
-        run_group_tests(varargin{2});
+        run_group_tests(arg);
     end
 else
-    if (nargin > 1) && ischar(varargin{2}) && ...
-            startsWith('help', varargin{2})
-        show_matrix_help(varargin{1});
-    elseif (nargin > 1) && ischar(varargin{2}) && ...
-            startsWith('properties', varargin{2})
-        varargout{1} = properties{strcmp(matrix_IDs, varargin{1})};
-    elseif (nargin > 1) && ischar(varargin{2}) && ...
-            startsWith('contents', varargin{2})
-        show_contents(varargin{1});
-    else
-        [varargout{1:nargout}] = generate_matrix(varargin{1:nargin});
-    end
+    [varargout{1:nargout}] = generate_matrix(varargin{1:nargin});
 end
 
     % Top level function for scanning the files.
@@ -549,7 +541,7 @@ end
                           test_func, '.m')))
             handle(test_func);
         else
-            disp('This group does not contain any tests.');
+            fprintf('Group %s does not contain any tests. \n', group_ID);
         end
     end
 
