@@ -130,7 +130,7 @@ if isempty(files_scanned)
 end
 
 if nargin == 0
-    help anymatrix;
+    help('anymatrix.m');
     return;
 elseif ~ischar(varargin{1})
     error('Anymatrix command was not recognized');
