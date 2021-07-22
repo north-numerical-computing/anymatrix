@@ -17,6 +17,7 @@ function varargout = anymatrix(varargin)
 %       hadamard - a large collection of Hadamard matrices.
 %       matlab   - other MATLAB matrices (not in gallery).
 %       nessie   - matrices from real-life networks.
+%       regtools - matrices from regularization problems.
 %
 %   Anymatrix accepts the following commands. All arguments are strings,
 %   except ones defined by the matrix M-files which might take various

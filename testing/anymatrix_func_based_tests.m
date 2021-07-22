@@ -1780,3 +1780,295 @@ end
 
 function test_hpl_ai_hpl_ai_matrix(testcase)
 end
+
+function test_corrinv_bccd16(testcase)
+    A = anymatrix('corrinv/bccd16');
+    anymatrix_check_props(A, 'corrinv/bccd16', testcase);
+end
+
+function test_corrinv_beyu11(testcase)
+    A = anymatrix('corrinv/beyu11');
+    anymatrix_check_props(A, 'corrinv/beyu11', testcase);
+end
+
+function test_corrinv_bhwi01(testcase)
+    A = anymatrix('corrinv/bhwi01');
+    anymatrix_check_props(A, 'corrinv/bhwi01', testcase);
+end
+
+function test_corrinv_cor1399(testcase)
+    A = anymatrix('corrinv/cor1399');
+    anymatrix_check_props(A, 'corrinv/cor1399', testcase);
+end
+
+function test_corrinv_cor3120(testcase)
+    A = anymatrix('corrinv/cor3120');
+    anymatrix_check_props(A, 'corrinv/cor3120', testcase);
+end
+
+function test_corrinv_fing97(testcase)
+    A = anymatrix('corrinv/fing97');
+    anymatrix_check_props(A, 'corrinv/fing97', testcase);
+end
+
+function test_corrinv_high02(testcase)
+    A = anymatrix('corrinv/high02');
+    anymatrix_check_props(A, 'corrinv/high02', testcase);
+end
+
+function test_corrinv_mmb13(testcase)
+    A = anymatrix('corrinv/mmb13');
+    anymatrix_check_props(A, 'corrinv/mmb13', testcase);
+end
+
+function test_corrinv_tec03(testcase)
+    A = anymatrix('corrinv/tec03');
+    anymatrix_check_props(A, 'corrinv/tec03', testcase);
+end
+
+function test_corrinv_tyda99r1(testcase)
+    A = anymatrix('corrinv/tyda99r1');
+    anymatrix_check_props(A, 'corrinv/tyda99r1', testcase);
+end
+
+function test_corrinv_tyda99r2(testcase)
+    A = anymatrix('corrinv/tyda99r2');
+    anymatrix_check_props(A, 'corrinv/tyda99r2', testcase);
+end
+
+function test_corrinv_tyda99r3(testcase)
+    A = anymatrix('corrinv/tyda99r3');
+    anymatrix_check_props(A, 'corrinv/tyda99r3', testcase);
+end
+
+function test_corrinv_usgs13(testcase)
+    A = anymatrix('corrinv/usgs13');
+    anymatrix_check_props(A, 'corrinv/usgs13', testcase);
+end
+
+function test_regtools_baart(testcase)
+    A = anymatrix('regtools/baart',10);
+    anymatrix_check_props(A, 'regtools/baart', testcase);
+    A = anymatrix('regtools/baart',20);
+    anymatrix_check_props(A, 'regtools/baart', testcase);
+    A = anymatrix('regtools/baart',30);
+    anymatrix_check_props(A, 'regtools/baart', testcase);
+end
+
+function test_regtools_blur(testcase)
+    A = anymatrix('regtools/blur',5);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',10);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',15);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',20);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',25);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',30);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+    A = anymatrix('regtools/blur',31);
+    anymatrix_check_props(A, 'regtools/blur', testcase);
+end
+
+function test_regtools_deriv2(testcase)
+    A = anymatrix('regtools/deriv2',5);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',10);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',15);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',20);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',25);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',30);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+    A = anymatrix('regtools/deriv2',31);
+    anymatrix_check_props(A, 'regtools/deriv2', testcase);
+end
+
+function test_regtools_foxgood(testcase)
+    A = anymatrix('regtools/foxgood',5);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',10);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',15);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',20);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',25);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',30);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+    A = anymatrix('regtools/foxgood',31);
+    anymatrix_check_props(A, 'regtools/foxgood', testcase);
+end
+
+function test_regtools_gravity(testcase)
+    A = anymatrix('regtools/gravity',5);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',10);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',15);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',20);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',25);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',30);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+    A = anymatrix('regtools/gravity',31);
+    anymatrix_check_props(A, 'regtools/gravity', testcase);
+end
+
+function test_regtools_heat(testcase)
+    A = anymatrix('regtools/heat',5);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',10);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',15);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',20);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',25);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',30);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+    A = anymatrix('regtools/heat',31);
+    anymatrix_check_props(A, 'regtools/heat', testcase);
+end
+
+function test_regtools_i_laplace(testcase)
+    A = anymatrix('regtools/i_laplace',5);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',10);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',15);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',20);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',25);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',30);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+    A = anymatrix('regtools/i_laplace',31);
+    anymatrix_check_props(A, 'regtools/i_laplace', testcase);
+end
+
+function test_regtools_parallax(testcase)
+    A = anymatrix('regtools/parallax',5);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',10);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',15);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',20);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',25);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',30);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+    A = anymatrix('regtools/parallax',31);
+    anymatrix_check_props(A, 'regtools/parallax', testcase);
+end
+
+function test_regtools_phillips(testcase)
+    A = anymatrix('regtools/phillips',20);
+    anymatrix_check_props(A, 'regtools/phillips', testcase);
+end
+
+function test_regtools_regutm(testcase)
+    A = anymatrix('regtools/regutm',5);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',10);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',15);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',20);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',25);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',30);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+    A = anymatrix('regtools/regutm',31);
+    anymatrix_check_props(A, 'regtools/regutm', testcase);
+end
+
+function test_regtools_shaw(testcase)
+    A = anymatrix('regtools/shaw',10);
+    anymatrix_check_props(A, 'regtools/shaw', testcase);
+    A = anymatrix('regtools/shaw',20);
+    anymatrix_check_props(A, 'regtools/shaw', testcase);
+    A = anymatrix('regtools/shaw',30);
+    anymatrix_check_props(A, 'regtools/shaw', testcase);
+end
+
+function test_regtools_spikes(testcase)
+    A = anymatrix('regtools/spikes',5);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',10);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',15);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',20);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',25);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',30);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+    A = anymatrix('regtools/spikes',31);
+    anymatrix_check_props(A, 'regtools/spikes', testcase);
+end
+
+function test_regtools_tomo(testcase)
+    A = anymatrix('regtools/tomo',5);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',10);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',15);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',20);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',25);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',30);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+    A = anymatrix('regtools/tomo',31);
+    anymatrix_check_props(A, 'regtools/tomo', testcase);
+end
+
+function test_regtools_ursell(testcase)
+    A = anymatrix('regtools/ursell',5);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',10);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',15);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',20);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',25);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',30);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+    A = anymatrix('regtools/ursell',31);
+    anymatrix_check_props(A, 'regtools/ursell', testcase);
+end
+
+function test_regtools_wing(testcase)
+    A = anymatrix('regtools/wing',5);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',10);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',15);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',20);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',25);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',30);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+    A = anymatrix('regtools/wing',31);
+    anymatrix_check_props(A, 'regtools/wing', testcase);
+end

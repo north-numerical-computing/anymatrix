@@ -6,6 +6,7 @@ function P = prop_list
 P = {
     'banded'
     'binary'
+    'block Toeplitz'
     'complex'
     'correlation'
     'defective'
