@@ -9,7 +9,7 @@ function [A,R,properties] = beta(n)
 %   P. Grover, V. S. Panwar and S. Reddy, Positivity Properties of Some
 %   Special Matrices, Linear Algebra Appl. 596, 203-215, 2020.
 
-properties = {'symmetric', 'positive definite', 'integer', 'positive', ...
+properties = {'symmetric', 'positive definite', 'integer', ...
               'totally positive', 'infinitely divisible'};
 if nargin == 0, A = []; R = []; return, end
 

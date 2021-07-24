@@ -1,7 +1,7 @@
 % Comments are preceded by a percentage sign.
 % Comments and notes are terminated by semicolons;
 
-core/dembo9:  Here place some notes about the dembo9 matrix.;
+core/dembo9:  Place here some notes about the dembo9 matrix.;
 
 core/augment: A very long comment about the augment matrix
 split over

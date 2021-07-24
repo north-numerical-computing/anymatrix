@@ -12,7 +12,7 @@ function [W,Z,Y,X,properties] = wilson
 %   2021; to appear in Amer. Math. Monthly.
 
 properties = {'symmetric', 'positive definite', 'positive', 'integer', ...
-              'ill-conditioned', 'unimodular', 'fixed size'};
+              'ill conditioned', 'unimodular', 'fixed size'};
 
 W = [5  7  6  5
      7 10  8  7

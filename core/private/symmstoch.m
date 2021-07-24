@@ -17,7 +17,7 @@ function [A,properties] = symmstoch(x)
 %    Classes of Inverse M-Matrices, Electron. J. Linear Algebra 3, 129-141,
 %    1998.
 
-properties = {'symmetric', 'stochastic', 'nonnegative', 'eigenvalues'};
+properties = {'symmetric', 'stochastic', 'eigenvalues'};
 if nargin == 0, A = []; return, end
 
 if length(x) == 1, x = (1:x)'; end

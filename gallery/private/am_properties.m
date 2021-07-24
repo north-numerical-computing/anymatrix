@@ -4,7 +4,7 @@ P = {
     'binomial', {'involutory', 'integer'}
     'cauchy', {'symmetric', 'positive definite', 'totally positive',...
                 'inverse', 'infinitely divisible',...
-               'parameter-dependent'} 
+                'parameter-dependent'} 
     'chebspec', {'defective', 'nilpotent'} 
     'chebvand', {'rectangular', 'square', 'parameter-dependent'} 
     'chow', {'hessenberg', 'toeplitz', 'eigenvalues', 'rank deficient',...
@@ -14,10 +14,10 @@ P = {
     'compar', {} 
     'condex', {'parameter-dependent'} 
     'cycol', {'rectangular', 'square', 'rank deficient', 'random'} 
-    'dorr', {'tridiagonal', 'diagonally dominant', 'ill-conditioned', ...
+    'dorr', {'tridiagonal', 'diagonally dominant', 'ill conditioned', ...
              'parameter-dependent'} 
     'dramadah', {'toeplitz', 'integer', 'nonnegative',...
-                 'ill-conditioned', 'unimodular'} 
+                 'ill conditioned', 'unimodular'} 
     'fiedler', {'symmetric', 'indefinite', 'parameter-dependent'} 
     'forsythe', {'eigenvalues', 'parameter-dependent'} 
     'frank', {'hessenberg', 'integer', 'nonnegative'} 
@@ -29,9 +29,9 @@ P = {
     'hanowa', {'parameter-dependent'}
     'integerdata', {'rectangular', 'integer', 'parameter-dependent'} 
     'invhess', {'integer', 'parameter-dependent'} 
-    'invol', {'involutory', 'ill-conditioned'} 
+    'invol', {'involutory', 'ill conditioned'} 
     'ipjfact', {'symmetric', 'positive definite', 'hankel',...
-                'ill-conditioned', 'positive'} 
+                'ill conditioned', 'positive'} 
     'jordbloc', {'triangular', 'eigenvalues', 'integer', 'nonnegative',...
                  'defective', 'parameter-dependent'} 
     'kahan', {'rectangular', 'square', 'triangular', 'parameter-dependent'} 
@@ -43,7 +43,7 @@ P = {
                'infinitely divisible', 'inverse'}
     'leslie', {'nonnegative', 'integer', 'parameter-dependent'} 
     'lesp', {'tridiagonal'} 
-    'lotkin', {'ill-conditioned', 'inverse'} 
+    'lotkin', {'ill conditioned', 'inverse'} 
     'minij', {'symmetric', 'positive definite', 'infinitely divisible',...
               'eigenvalues', 'integer', 'positive'} 
     'moler', {'symmetric', 'positive definite', 'eigenvalues', 'integer'}
@@ -55,7 +55,7 @@ P = {
             'parameter-dependent'} 
     'poisson', {'symmetric', 'positive definite'} 
     'prolate',{'symmetric', 'positive definite', 'toeplitz',...
-               'parameter-dependent', 'ill-conditioned'} 
+               'parameter-dependent', 'ill conditioned'} 
     'randcolu', {'random', 'parameter-dependent', 'rectangular', 'square'} 
     'randcorr', {'parameter-dependent', 'random', 'correlation'} 
     'randhess', {'hessenberg', 'orthogonal', 'random',...
@@ -74,7 +74,7 @@ P = {
     'tridiag', {'symmetric', 'positive definite', 'tridiagonal',...
                 'sparse', 'M-matrix'} 
     'triw', {'defective', 'rectangular', 'square', 'triangular',...
-             'ill-conditioned'} 
+             'ill conditioned'} 
     'uniformdata', {'rectangular', 'parameter-dependent', 'random'}  
     'wathen', {'symmetric', 'positive definite', 'sparse'} 
     'wilk', {'tridiagonal', 'fixed size'}

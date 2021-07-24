@@ -79,8 +79,8 @@ for mat = M.'
                     "    anymatrix_check_props(A, '", matrix_ID, "', testcase);\n");
             end
             
-            % Arbitrary set of dimensions to test.
-            first_args = [5, 10, 15, 20, 25, 30, 31];
+            % Set of dimensions to test.
+            first_args = [3, 5, 8, 10, 15, 24, 25, 30, 31];
             second_args = 0.5:0.5:2;
             third_args = 0.5:0.5:2;
             for first_arg = first_args

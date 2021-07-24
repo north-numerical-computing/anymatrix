@@ -18,7 +18,7 @@ P = {
     'hessenberg'
     'idempotent'
     'indefinite'
-    'ill-conditioned'
+    'ill conditioned'
     'infinitely divisible'
     'integer'
     'inverse'

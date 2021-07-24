@@ -13,9 +13,8 @@ function [A,properties] = hessfull01(n)
 %     Spectral Structures of Irreducible Totally Nonnegative Matrices,
 %     SIAM J. Matrix Anal. Appl. 22 (2), 627-645, 2000.
 
-properties = {'hessenberg', 'toeplitz', 'nonnegative', ...
-              'totally nonnegative', 'integer', 'rank deficient', ...
-              'eigenvalues'};
+properties = {'hessenberg', 'toeplitz', 'totally nonnegative', ...
+              'integer', 'rank deficient', 'eigenvalues'};
 if nargin == 0, A = []; return, end
 
 A = tril(ones(n),1);
