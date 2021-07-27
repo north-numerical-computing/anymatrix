@@ -1,4 +1,5 @@
-%   CORE group
+% CORE group
+%
 %   augment    - Augmented system matrix.
 %   beta       - Symmetric totally positive matrix of integers.
 %   blockhouse - Block Householder matrix.
@@ -16,4 +17,4 @@
 %   vecperm    - Vec-permutation matrix.
 %   wilson     - Wilson matrix.
 %   zielke_symm - Symmetric matrix of Zielke.
-%   zielke_nonsymm - Nonsymmetric matrix of Zielke. 
+%   zielke_nonsymm - Nonsymmetric matrix of Zielke.

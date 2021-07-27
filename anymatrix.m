@@ -8,7 +8,7 @@ function varargout = anymatrix(varargin)
 %   develop their own collections either by creating them from scratch or
 %   extending the built-in collection.
 %
-%   The built-in collection contains 123 matrices organized in 6 groups:
+%   The built-in collection contains 140 matrices organized in 7 groups:
 %
 %       contest  - the CONTEST test matrix toolbox of random matrices
 %                  from networks.
@@ -185,7 +185,7 @@ elseif (nargin > 3) || ((nargin == 3) && ...
     error('Anymatrix command was not recognized (too many inputs).');
 end
 
-% Execute the anymatrix specified command.
+% Execute the specified command.
 if startsWith('all', command)
     varargout{1} = matrix_IDs;
 elseif startsWith('contents', command)
@@ -350,7 +350,8 @@ end
         k = 0;
         for matrix_properties = properties.'
             k = k + 1;
-            % Test if expression is true for this matrix and add it's ID.
+            % Test if the expression is true for this matrix
+            % and add it's ID.
             if eval(new_expression)
                 IDs = [IDs; matrix_IDs{k}];
             end
@@ -390,7 +391,7 @@ end
     end
 
     % Get properties of a specified array of matrices in a cell array of
-    % cell arrays, arranged in the same sequence as matrix_IDs.
+    % cell arrays, arranged in the same order as matrix_IDs.
     function P = scan_properties(matrix_IDs)
         P = {};
         for matrix_ID = matrix_IDs.'
@@ -490,10 +491,10 @@ end
          end  
     end
 
-    % Create or update the specified git group.
+    % Create or update a specified git group.
     function update_git_group(group_ID, repo_ID)
         group_folder = strcat(root_path, '/', group_ID, '/');
-        % If group does not exist locally, create folders and clone it.
+        % If the group does not exist locally, create folders and clone it.
         if ~isfolder(group_folder)
             if startsWith(repo_ID, 'http')
                 status = system(strcat( ...
@@ -505,7 +506,7 @@ end
                     ".git"" ", """", group_folder, 'private"'), ...
                     '-echo');
             end
-            % Create the bridge file to the private/ dir.
+            % Create a bridge file to the private/ dir of the group.
             fileID = fopen(strcat(group_folder, ...
                                   'anymatrix_', group_ID, '.m'), 'w');
             temp = strcat('function varargout = anymatrix_', ...
@@ -534,7 +535,7 @@ end
         [set_IDs, group_IDs, matrix_IDs, properties] = scan_filesystem();
     end
 
-    % Run the testsuite of a particular group.
+    % Run a testsuite of a particular group.
     function run_group_tests(group_ID)
         handle = str2func(strcat('anymatrix_', group_ID));
         test_func = strcat('test_', group_ID);

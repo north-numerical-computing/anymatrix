@@ -6,7 +6,7 @@
 matrices into groups and sets.  It provides commands to search for matrices
 by their properties and generate matrices by their unique IDs.
 
-Currently, the built-in collection contains 121 matrices organized into 6 groups:
+Currently, the built-in collection contains 140 matrices organized into 7 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
 * [core](core/private/Contents.m) - miscellaneous matrices.
@@ -14,6 +14,7 @@ Currently, the built-in collection contains 121 matrices organized into 6 groups
 * [hadamard](hadamard/private/Contents.m) - a large collection of Hadamard matrices.
 * [matlab](matlab/private/Contents.m) - other MATLAB matrices (not in gallery).
 * [nessie](nessie/private/Contents.m) - matrices from real-life networks.
+* [regtools](regtools/private/Contents.m) - matrices from regularization problems.
 
 ## Quick start
 
@@ -94,7 +95,7 @@ MATLAB 2020b or newer is required.
 
 ## Reference
 
-Nicholas J. Higham and Mantas Mikaitis. *Anymatrix: Extendable MATLAB Matrix Collections*. In preparation.
+Nicholas J. Higham and Mantas Mikaitis. *Anymatrix: An Extendable MATLAB Matrix Collection, User's Guide*. In preparation.
 
 ## Licence
 

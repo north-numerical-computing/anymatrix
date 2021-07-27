@@ -1,5 +1,5 @@
 function P = prop_list
-%PROP_LIST  Properties that are recognized by anymatrix.
+%PROP_LIST  List of properties recognized by anymatrix.
 %   PROP_LIST is an n-by-1 cell array with a single supported property on
 %   each row.
 

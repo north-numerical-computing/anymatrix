@@ -2,7 +2,7 @@
 % of anymatrix matrix properties.
 
 % Set this to '1' to regenerate unit tests.
-regenerate_tests = 1;
+regenerate_tests = 0;
 
 % Warnings off/on.
 turn_off_warnings = 1;

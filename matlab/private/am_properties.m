@@ -8,11 +8,11 @@ P = {
              'totally positive', 'inverse', 'ill conditioned'}
     'invhilb', {'symmetric', 'positive definite', 'inverse', ...
                 'ill conditioned'}
-    'magic', {'integer','positive'}
+    'magic', {'integer', 'positive'}
     'pascal', {'symmetric', 'positive definite', 'integer', ...
                'involutory', 'totally positive', 'ill conditioned'}
     'rosser', {'fixed size', 'symmetric', 'indefinite', 'integer', ...
-                'rank deficient'}
+               'rank deficient'}
     'spiral', {'integer', 'positive'}
     'toeplitz', {'toeplitz', 'square', 'rectangular'}
     'vander', {}

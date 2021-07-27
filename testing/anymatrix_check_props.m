@@ -1,12 +1,12 @@
 function out = anymatrix_check_props(M, matrix_ID, testcase)
 %ANYMATRIX_CHECK_PROPS  Confirm matrix properties.
 %   This function loops through the properties of a given anymatrix matrix
-%   and checks that an instance of that matrix given in the first argument
+%   and checks that an instance of that matrix given as the first argument
 %   has those properties.
 %
 %   'false' is returned if any of the properties do not apply. Those
 %   properties for which test function is not found are not taken into
-%   account. If all properties with tests available apply, 'true' is
+%   account. If all properties with tests available apply 'true' is
 %   returned.
 
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));

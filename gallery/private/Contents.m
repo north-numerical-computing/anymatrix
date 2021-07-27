@@ -1,4 +1,5 @@
-%   GALLERY group.
+% GALLERY group.
+%
 %   binomial    Binomial matrix -- multiple of involutory matrix.
 %   cauchy      Cauchy matrix.
 %   chebspec    Chebyshev spectral differentiation matrix.

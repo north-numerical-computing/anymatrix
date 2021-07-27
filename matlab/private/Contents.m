@@ -1,4 +1,5 @@
-%   MATLAB group
+% MATLAB group
+%
 %   compan    - Companion matrix.
 %   hadamard  - Hadamard matrix.
 %   hankel    - Hankel matrix.
