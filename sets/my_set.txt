@@ -1,16 +1,17 @@
-% Comments are preceded by a percentage sign.
-% Comments and notes are terminated by semicolons;
+% This is an example anymatrix set.
+% Comments start with a percentage sign as a first character of the line.
 
-core/dembo9:  Place here some notes about the dembo9 matrix.;
+% Following are declaration of some matrices in this set.
 
-core/augment: A very long comment about the augment matrix
-split over
-multiple lines,
-with new line characters replaced
-by white spaces.;
+% Dembo9 matrix without any input arguments.
+core/dembo9:
 
-gallery/wilk:
+% Augment matrix with a matrix as an input argument.
+core/augment: [1, 1; 2, 2]
 
-Notes about the wilk matrix.;
+% Wilkinson matrix with a single input.
+gallery/wilk: 3
 
-
+% Two pascal matrices with different input arguments.
+matlab/pascal: 5, 1
+matlab/pascal: 5, 2

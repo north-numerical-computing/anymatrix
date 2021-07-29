@@ -25,12 +25,12 @@ function varargout = anymatrix(varargin)
 %
 %   help anymatrix - display this information.
 %   ANYMATRIX('all') - return all matrix IDs in the collection.
-%   ANYMATRIX('contents', group_ID) - displays Contents.m of the group
-%       with a specified name group_ID.
+%   ANYMATRIX('contents', group_name) - displays Contents.m of the group
+%       with a specified name group_name.
 %   G = ANYMATRIX('groups') - return the available groups.
-%   M = ANYMATRIX('groups', group_id) - return matrix IDs that belong
-%       to the group with a specified name group_id.
-%   ANYMATRIX('groups', group_id, repository) - clone or update
+%   M = ANYMATRIX('groups', group_name) - return matrix IDs that belong
+%       to the group with a specified name group_name.
+%   ANYMATRIX('groups', group_name, repository) - clone or update
 %       an anymatrix group stored in the specified repository.
 %   ANYMATRIX('help', matrix_id) - list the help for a specified
 %       matrix (anymatrix(matrix_id, 'help') also accepted).
@@ -44,10 +44,10 @@ function varargout = anymatrix(varargin)
 %       the specified properties.
 %   ANYMATRIX('scan') - force a scan of the file system.
 %   S = ANYMATRIX('sets') - return the available sets.
-%   M = ANYMATRIX('sets', set_id) - return matrix IDs that belong to
+%   M = ANYMATRIX('sets', set_name) - return matrix IDs that belong to
 %       the set with a specified name set_id.
 %   ANYMATRIX('test') - run tests of all groups, where available.
-%   ANYMATRIX('test', group_ID) - run tests of the specified group, if
+%   ANYMATRIX('test', group_name) - run tests of the specified group, if
 %       available.
 %   [out1, ..., outK] = ANYMATRIX(matrix_id, in1, ..., inN) - get the
 %       matrix with a specified matrix id and parameters (if any) in1 to
@@ -127,7 +127,7 @@ if isempty(files_scanned)
     [set_IDs, group_IDs, matrix_IDs, properties] = ...
         scan_filesystem();
     files_scanned = 1;
-    disp('Anymatrix scanning done.');
+    disp('Automatic anymatrix scanning done.');
 end
 
 if nargin == 0
@@ -223,12 +223,23 @@ elseif startsWith('sets', command)
     if (nargin == 1)
         varargout{1} = set_IDs;
     else
-        % NOTE: If becomes slow, preload all sets instead of reading
-        % from a file everytime.
-        varargout{1} = regexprep(readcell( ...
+        S = readcell( ...
             strcat(root_path, '/sets/', arg, '.txt'), ...
-            'Delimiter', ':', 'CommentStyle', '%', 'LineEnding', ...
-            ';', 'Whitespace', ' \n'), '[\n\r]+',' ');
+            'Delimiter', ':', 'CommentStyle', '%', ...
+            'Whitespace', ' \n');
+        varargout{1} = S;
+        out_ind = 2;
+        % Generate matrices using parameters specified in the set.
+        for index = 1:length(S)
+            if (ismissing(S{index, 2}))
+                varargout{out_ind} = eval(strcat('generate_matrix(''', ...
+                    S{index, 1}, ''')'));
+            else
+                varargout{out_ind} = eval(strcat('generate_matrix(''', ...
+                    S{index, 1}, ''',', num2str(S{index, 2}), ')'));
+            end
+            out_ind = out_ind + 1;
+        end
     end
 elseif startsWith('test', command)
     if (nargin == 1)
