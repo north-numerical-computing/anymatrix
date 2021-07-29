@@ -44,8 +44,8 @@ function varargout = anymatrix(varargin)
 %       the specified properties.
 %   ANYMATRIX('scan') - force a scan of the file system.
 %   S = ANYMATRIX('sets') - return the available sets.
-%   M = ANYMATRIX('sets', set_name) - return matrix IDs that belong to
-%       the set with a specified name set_id.
+%   [s, mat1, ..., matK] = ANYMATRIX('sets', set_name) - return matrix IDs
+%       in S and generate matrices in a specified set.
 %   ANYMATRIX('test') - run tests of all groups, where available.
 %   ANYMATRIX('test', group_name) - run tests of the specified group, if
 %       available.
