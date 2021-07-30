@@ -14,7 +14,7 @@ P = {
     'regutm', {'random', 'ill conditioned'}
     'shaw', {'symmetric', 'ill conditioned'}
     'spikes', {'ill conditioned'}
-    'tomo', {'sparse', 'ill conditioned'}
+    'tomo', {'sparse', 'ill conditioned', 'random'}
     'ursell', {'hankel', 'ill conditioned'}
     'wing', {'ill conditioned'}
     };
