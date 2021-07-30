@@ -119,6 +119,10 @@ persistent supported_properties
 
 % Get the directory containing the anymatrix.m file.
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
+% Add anymatrix/sets and anymatrix/testing to the search path.
+addpath(strcat(root_path, '/sets'));
+addpath(strcat(root_path, '/testing'));
+
 
 % Scan the file structure of the collection to obtain matrix, group and
 % set IDs, if it hasn't been scanned yet.
@@ -341,8 +345,9 @@ end
         ind = 1;
         new_expression = '';
         for p = ex_props.'
-            mod_prop = strcat('ismember(''', lower(p{1}), ...
-                       ''', lower(matrix_properties{1}))');
+            mod_prop = strcat('ismember(''', ...
+                strrep(lower(p{1}), '-', ' '), ...
+                ''', strrep(lower(matrix_properties{1}), ''-'', '' ''))');
             trunc_exp = expression(ind:end);
             % Find where the property is in the expression.
             prop_index = strfind(trunc_exp, p{1});
@@ -432,9 +437,11 @@ end
         end
         % Check if all the properties can be recognized.
         for i=1:length(matrix_IDs)
-            if any(~ismember(lower(P{i}), lower(supported_properties)))
-                for bad_prop = P{i}(~ismember(lower(P{i}), ...
-                                              lower(supported_properties)))
+            for bad_prop = ...
+                    P{i}(~ismember(strrep(lower(P{i}), '-', ' '), ...
+                                   strrep(lower(supported_properties), ...
+                                   '-', ' ')))
+                if ~isempty(bad_prop)
                     warning('Property %s in %s is not recognized.', ...
                         bad_prop{1}, matrix_IDs{i});
                 end
