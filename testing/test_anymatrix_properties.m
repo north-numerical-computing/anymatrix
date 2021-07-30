@@ -1,18 +1,19 @@
-% This is a top-level script to auto-generate and start the tests
-% of anymatrix matrix properties.
-
-% Set this to '1' to regenerate unit tests.
-regenerate_tests = 0;
-
-% Warnings off/on.
-turn_off_warnings = 1;
+function test_anymatrix_properties(regenerate_tests, warnings_on)
+%TEST_ANYMATRIX_PROPERTIES  Test anymatrix matrix properties.
+%   This function auto generates the function-based unit tests for matrix
+%   properties and runs them.
+%
+%   Warnings are generated for properties that do not have tests available
+%   if warnings_on=1.
+%
+%   Tests are regenerated if regenerate_tests=1.
 
 anymatrix('sc');
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 
 % Check which properties recognized by anymatrix have tests and throw
 % warnings for those that can't be tested.
-if ~turn_off_warnings
+if warnings_on
     P = anymatrix('p');
     for prop = P.'
         if ~isfile(strcat(root_path, '/private/test_', prop{1}, '.m'))
@@ -114,3 +115,5 @@ runner.addPlugin(DiagnosticsOutputPlugin('OutputDetail', 2))
 % Run the testsuite.
 test_results = runner.run(anymatrix_func_based_tests);
 table(test_results)
+
+end
