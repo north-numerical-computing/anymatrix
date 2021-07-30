@@ -418,21 +418,28 @@ end
         M = prop_map();
         I = inv_prop_map();
         for i = 1:length(P)
-            for j = 1:length(M)
-                % Find parent properties of any of the properties already
-                % in the list and add them if they are not in yet.
-                if any(ismember(lower(P{i}), lower(M{j, 2}))) && ...
-                        ~ismember(lower(M{j, 1}), lower(P{i}))
-                    P{i} = [P{i}; M{j, 1}];
-                end
-            end
             for j = 1:length(I)
                 % Find properties that can be added due to absence of some
                 % other properties.
-                if ~any(ismember(lower(I{j, 2}), lower(P{i}))) && ...
-                        ~ismember(lower(I{j, 1}), lower(P{i}))
+                if ~any(ismember(strrep(lower(I{j, 2}),'-', ' '), ...
+                        strrep(lower(P{i}), '-', ' '))) && ...
+                        ~ismember(strrep(lower(I{j, 1}), '-', ' '), ...
+                        strrep(lower(P{i}), '-', ' '))
                     P{i} = [P{i}; I{j, 1}];
                 end
+            end
+            j = 1;
+            while j <= length(M)
+                % Find parent properties of any of the properties already
+                % in the list and add them if they are not in yet.
+                if any(ismember(strrep(lower(P{i}), '-', ' '), ...
+                                strrep(lower(M{j, 2}), '-', ' '))) && ...
+                    ~ismember(strrep(lower(M{j, 1}), '-', ' '), ...
+                              strrep(lower(P{i}), '-', ' '))
+                    P{i} = [P{i}; M{j, 1}];
+                    j=1;
+                end
+                j = j+1;
             end
         end
         % Check if all the properties can be recognized.
