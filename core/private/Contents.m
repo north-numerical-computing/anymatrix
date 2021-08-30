@@ -9,10 +9,11 @@
 %   gfpp       - Matrix giving maximal growth for Gaussian elim. with pivoting.
 %   hessfull01 - Totally nonnegative lower Hessenberg Toeplitz matrix.
 %   nilpotri   - Nilpotent tridiagonal matrix (sparse).
-%   rschur     - An upper quasi-triangular matrix.
+%   rschur     - Upper quasi-triangular matrix.
 %   soules     - Soules matrix.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
+%   triminsval01 - Upper triangular binary Toeplitz matrix.
 %   vand       - Vandermonde matrix.
 %   vecperm    - Vec-permutation matrix.
 %   wilson     - Wilson matrix.

@@ -6,8 +6,8 @@ P = {
                'inverse', 'infinitely divisible', 'parameter-dependent'}
     'chebspec', {'defective', 'nilpotent'}
     'chebvand', {'rectangular', 'square', 'parameter-dependent'}
-    'chow', {'hessenberg', 'toeplitz', 'eigenvalues', 'rank deficient', ...
-             'parameter-dependent'}
+    'chow', {'hessenberg', 'toeplitz', 'binary', 'eigenvalues', ...
+             'rank deficient', 'parameter-dependent'}
     'circul', {'toeplitz', 'normal', 'eigenvalues', 'parameter-dependent'}
     'clement', {'tridiagonal', 'eigenvalues', 'singular values'}
     'compar', {}
@@ -31,7 +31,7 @@ P = {
     'invol', {'involutory', 'ill conditioned'}
     'ipjfact', {'symmetric', 'positive definite', 'hankel', ...
                 'ill conditioned', 'positive'}
-    'jordbloc', {'triangular', 'eigenvalues', 'integer', 'nonnegative', ...
+    'jordbloc', {'triangular', 'eigenvalues', 'binary', 'nonnegative', ...
                  'defective', 'parameter-dependent'}
     'kahan', {'rectangular', 'square', 'triangular', 'parameter-dependent'}
     'kms', {'symmetric', 'positive definite', 'toeplitz', ...
@@ -40,7 +40,7 @@ P = {
     'lauchli', {'rectangular', 'parameter-dependent'}
     'lehmer', {'symmetric', 'positive definite', 'totally nonnegative', ...
                'infinitely divisible', 'inverse'}
-    'leslie', {'nonnegative', 'integer', 'parameter-dependent'}
+    'leslie', {'nonnegative', 'binary', 'parameter-dependent'}
     'lesp', {'tridiagonal'}
     'lotkin', {'ill conditioned', 'inverse'}
     'minij', {'symmetric', 'positive definite', 'infinitely divisible', ...
@@ -62,7 +62,7 @@ P = {
     'randjorth', {'random', 'parameter-dependent', 'pseudo-orthogonal'}
     'rando', {'rectangular', 'random', 'integer'}
     'randsvd', {'orthogonal', 'rectangular', 'square', 'random'}
-    'redheff', {'integer', 'nonnegative', 'eigenvalues'}
+    'redheff', {'binary', 'nonnegative', 'eigenvalues'}
     'riemann', {'integer', 'eigenvalues'}
     'ris', {'hankel', 'symmetric', 'indefinite'}
     'sampling', {'eigenvalues'}

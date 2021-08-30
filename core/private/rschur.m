@@ -1,5 +1,5 @@
 function [A,properties] = rschur(n,mu,x,y)
-%RSCHUR   An upper quasi-triangular matrix.
+%RSCHUR   upper quasi-triangular matrix.
 %   A = RSCHUR(N,MU,X,Y) is an N-by-N matrix in real Schur form.
 %   All the diagonal blocks are 2-by-2 (except for the last one, if N
 %   is odd) and the k'th has the form [x(k) y(k); -y(k) x(k)].
