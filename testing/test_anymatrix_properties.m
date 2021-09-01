@@ -47,8 +47,8 @@ else
     fileID = fopen(test_function_file, 'a+');
 end
 
-% Generate unit tests for those matrices that are found not to be present
-% in the testsuite yet.
+% Generate unit tests for those matrices that are found to be not present
+% in the testsuite.
 for mat = M.'
     existent_tests = fileread(test_function_file);
     matrix_ID = mat{1};
@@ -63,6 +63,16 @@ for mat = M.'
         if isfile(test_file) && contains(fileread(test_file), ...
                 strcat('test_', group_name, '_', matrix_name))
            tests = fileread(test_file);
+           header_pat = 'function' + whitespacePattern + ...
+               strcat('test_', group_name, '_', matrix_name, '(testcase)');
+           function_body = extractBetween(tests, header_pat, 'function');
+           % NOTE: extractBetween returns a cell array whereas extractAfter
+           % returns a char array, hence the conversion.
+           if isempty(function_body)
+               function_body = {extractAfter(tests, header_pat)};
+           end
+           tests = strcat('function test_', group_name, '_', ...
+               matrix_name, '(testcase)', newline, function_body{1});
            fprintf(fileID, '\n\n');
            fprintf(fileID, tests);
         else

@@ -9,6 +9,7 @@ function test_hadamard_hadamard(testcase)
         end
     end
 end
+
 function test_hadamard_complex_hadamard(testcase)
     [~,dims] = anymatrix('hadamard/complex_hadamard');
     nn = length(dims);
