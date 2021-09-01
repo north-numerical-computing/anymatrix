@@ -31,7 +31,7 @@ for i = 1:nn
     n = dims(i,1);
     fprintf('Testing complex Hadamard matrices of dimension %2.0f.\n',n)
     for k = 1:dims(i,2)
-        A = complex_hadamard(n,k); 
+        A = complex_hadamard(n,k);
         check(1) = norm(abs(A(:))-1) > 10*eps;
         orthog_checks = max(norm(A*A' - n*eye(n),1), norm(A'*A - n*eye(n),1));
         check(2) = orthog_checks > 5e2*eps;
