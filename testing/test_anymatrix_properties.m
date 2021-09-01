@@ -4,7 +4,7 @@ function test_anymatrix_properties(regenerate_tests, warnings_on)
 %   properties and runs them.
 %
 %   Warnings are generated for properties that do not have tests available
-%   if warnings_on=1.
+%   if warnings_on == 1.
 %
 %   Tests are regenerated if regenerate_tests=1.
 

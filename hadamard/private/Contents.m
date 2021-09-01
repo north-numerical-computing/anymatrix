@@ -1,3 +1,4 @@
 % HADAMARD group
 %
-%   Hadamard matrices of dimension up to 428.
+%   hadamard         - Hadamard matrices of dimension up to 428.
+%   complex_hadamard - Complex Hadamard matrices.
