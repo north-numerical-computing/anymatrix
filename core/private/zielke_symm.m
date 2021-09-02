@@ -8,7 +8,7 @@ function [A,properties] = zielke_symm(n,a)
 %  G. Zielke, Testmatrizen mit maximaler Konditionszahl, Computing 13,
 %  33-54, 1974, section 3.
 
-properties = {'symmetric', 'indefinite'};
+properties = {'symmetric', 'indefinite', 'integer'};
 if nargin == 0, A = []; return, end
 if nargin == 1, a = 0; end;
 
