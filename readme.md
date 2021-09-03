@@ -87,7 +87,7 @@ anymatrix p 'core/beta'
 List all the available commands and shorthand aliases of commands.
 ```
 anymatrix('help')
-
+```
 
 ### Remote groups
 
