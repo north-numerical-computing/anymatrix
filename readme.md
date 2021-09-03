@@ -87,7 +87,20 @@ anymatrix p 'core/beta'
 List all the available commands and shorthand aliases of commands.
 ```
 anymatrix('help')
-```
+
+
+### Remote groups
+
+The following groups are available for downloading into Anymatrix.
+
+- [HPL-AI-Matrix](https://github.com/higham/hpl-ai-matrix): matrix
+  designed for use in the HPL-AI Benchmark.
+
+- [matrices-correlation-invalid](https://github.com/higham/matrices-correlation-invalid):
+  Collection of invalid correlation matrices.
+ 
+- [matrices-mp-cosm](https://github.com/Xiaobo-Liu/matrices-mp-cosm):
+  Collection of matrices for testing the matrix cosine.
 
 ## Requirements
 
