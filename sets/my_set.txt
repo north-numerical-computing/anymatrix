@@ -1,5 +1,5 @@
 % This is an example anymatrix set.
-% Comments start with a percentage sign as a first character of the line.
+% Comments start with a `%' symbol as the first character of the line.
 
 % Following are declaration of some matrices in this set.
 
