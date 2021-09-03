@@ -1,8 +1,12 @@
 function [A,properties] = edelman27
 %EDELMAN27  Matrix for which det is computed as the wrong integer.
 %   A = EDELMAN27 is a 27-by-27 matrix of 1s and -1s for which the
-%   MATLAB det function returns an odd integer, though the exact
-%   determinant is an even integer. The matrix was found by Alan Edelman.
+%   MATLAB det function returns
+%   >> format long g, det(A)
+%   ans =
+%              839466457497601
+%   yet the exact dterminant is 839466457497600.
+%   The matrix was found by Alan Edelman.
 %   Strange as it may seem, this behavior does not indicate anything is
 %   wrong with the det function and it is consistent with rounding error
 %   analysis.

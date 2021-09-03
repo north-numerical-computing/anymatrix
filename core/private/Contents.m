@@ -13,7 +13,7 @@
 %   soules     - Soules matrix.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
-%   triminsval01 - Upper triangular binary Toeplitz matrix.
+%   triminsval01 - Optimal upper triangular binary Toeplitz matrix.
 %   vand       - Vandermonde matrix.
 %   vecperm    - Vec-permutation matrix.
 %   wilson     - Wilson matrix.
