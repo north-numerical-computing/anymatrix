@@ -565,7 +565,7 @@ end
     % Run a testsuite of a particular group.
     function run_group_tests(group_ID)
         handle = str2func(strcat('anymatrix_', group_ID));
-        test_func = strcat('test_', group_ID);
+        test_func = 'test_group';
         if (isfile(strcat(root_path, '/', group_ID, '/private/', ...
                           test_func, '.m')))
             handle(test_func);
