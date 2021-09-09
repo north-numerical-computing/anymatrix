@@ -105,6 +105,17 @@ if verLessThan('matlab','9.9')
     error('MATLAB 2020b or newer is required.')
 end
 
+% List of built-in anymatrix groups.
+built_in_groups = {
+     'contest'
+     'core'
+     'gallery'
+     'hadamard'
+     'matlab'
+     'nessie'
+     'regtools'
+     };
+
 % Matrix ID pattern
 matrix_ID_pat = ...
     asManyOfPattern(alphanumericsPattern | characterListPattern("_")) + ...
@@ -425,6 +436,13 @@ end
             P = [P; {get_properties(matrix_ID{1})}];
         end
 
+        % Add property 'built-in' for the built-in matrices.
+        for i = 1:length(matrix_IDs)
+           if any(startsWith(matrix_IDs{i}, built_in_groups))
+               P{i} = [P{i}; 'built-in'];
+           end
+        end
+
         % Add parent properties if not specified.
         M = prop_map();
         I = inv_prop_map();
@@ -453,6 +471,7 @@ end
                 j = j+1;
             end
         end
+
         % Check if all the properties can be recognized.
         for i=1:length(matrix_IDs)
             for bad_prop = ...

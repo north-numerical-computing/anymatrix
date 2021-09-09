@@ -7,6 +7,7 @@ P = {
     'banded'
     'binary'
     'block Toeplitz'
+    'built-in'
     'complex'
     'correlation'
     'defective'
