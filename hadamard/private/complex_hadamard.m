@@ -15,7 +15,7 @@ function [A,dims,properties] = complex_hadamard(n,k)
 %   Matrices, Open Systems & Information Dynamics 13, 133-177, 2006.
 %   The equation numbers in comments below refer to this paper.
 
-properties = {'square', 'complex', 'fixed size'};
+properties = {'square', 'complex'};
 dims = [6 3
         7 2
         11 2

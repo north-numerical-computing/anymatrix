@@ -47,6 +47,7 @@ end
 
 dims = read_dims;
 if nargin == 0, A = []; return, end
+if nargin == 1, k = 1; end
 
 % Generate the requested matrix.
 

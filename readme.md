@@ -97,10 +97,10 @@ The following groups are available for downloading into Anymatrix.
   designed for use in the HPL-AI Benchmark.
 
 - [matrices-correlation-invalid](https://github.com/higham/matrices-correlation-invalid):
-  Collection of invalid correlation matrices.
+  collection of invalid correlation matrices.
  
 - [matrices-mp-cosm](https://github.com/Xiaobo-Liu/matrices-mp-cosm):
-  Collection of matrices for testing the matrix cosine.
+  collection of matrices for testing the matrix cosine.
 
 ## Requirements
 

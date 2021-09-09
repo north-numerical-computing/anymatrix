@@ -90,6 +90,15 @@ function varargout = anymatrix(varargin)
 %   Fox, Desmond J. Higham and Gian-Luca Oppo, eds, Network Science:
 %   Complexity in Nature and Technology, pp. 85-106, Springer, 2010.
 %   https://doi.org/10.1007/978-1-84996-396-1_5
+%
+%   The regtools group is included with permission from the
+%   Regulariation Tools toolbox at https://www.imm.dtu.dk/~pcha/Regutools/
+%   P. C. Hansen Regularization Tools: A Matlab package for analysis and
+%   solution of discrete ill-posed problems.  Numer. Algorithms 6(1), 1--35
+%   (1994).  https://doi.org/10.1007/BF02149761
+%   P. C. Hansen: Regularization Tools version 4.0 for Matlab 7.3.
+%   Numer. Algorithms 46(2), 189--194 (2007).
+%   https://doi.org/10.1007/s11075-007-9136-9
 
 % Check that MATLAB 2020b or higher is present.
 if verLessThan('matlab','9.9')
