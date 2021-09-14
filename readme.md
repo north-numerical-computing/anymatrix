@@ -6,7 +6,7 @@
 matrices into groups and sets.  It provides commands to search for matrices
 by their properties and generate matrices by their unique IDs.
 
-Currently, the built-in collection contains 140 matrices organized into 7 groups:
+Currently, the built-in collection contains 142 matrices organized into 7 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
 * [core](core/private/Contents.m) - miscellaneous matrices.
