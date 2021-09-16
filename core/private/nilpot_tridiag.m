@@ -1,6 +1,6 @@
-function [A,properties] = nilpotri(n) 
-%NILPOTRI  Nilpotent tridiagonal matrix (sparse).
-%   A = NILPOTRI(N) is an N-by-N nilpotent tridiagonal matrix.
+function [A,properties] = nilpot_tridiag(n) 
+%NILPOT_TRIDIAG  Nilpotent tridiagonal matrix (sparse).
+%   A = NILPOT_TRIDIAG(N) is an N-by-N nilpotent tridiagonal matrix.
 %   A^N = 0, modulo rounding errors.
 
 %   Reference:

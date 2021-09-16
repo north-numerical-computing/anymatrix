@@ -23,7 +23,7 @@ function [A,properties] = totally_nonneg(d,x,y,theta)
 %   Matrices, in Total Positivity and Its Applications, Mariano Gasca and
 %   Charles Micchelli, eds, Springer, pp. 109-130, 1996.  Theorem 4.2.
 
-properties = {'totally nonnegative'};
+properties = {'totally nonnegative', 'parameter-dependent'};
 if nargin == 0, A = []; return, end
 
 if length(d) == 1, d = rand(d,1); end

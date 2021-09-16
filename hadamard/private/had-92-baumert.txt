@@ -1,0 +1,1 @@
+Baumert matrix is special case: see baumert.m.

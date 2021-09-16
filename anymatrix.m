@@ -19,9 +19,9 @@ function varargout = anymatrix(varargin)
 %       nessie   - matrices from real-life networks.
 %       regtools - matrices from regularization problems.
 %
-%   Anymatrix accepts the following commands. All arguments are strings,
-%   except ones defined by the matrix M-files which might take various
-%   types of arguments.
+%   Anymatrix accepts the following commands. All arguments are character
+%   vectors or strings, except ones defined by the matrix M-files which
+%   might take various types of arguments.
 %
 %   help anymatrix - display this information.
 %   ANYMATRIX('all') - return all matrix IDs in the collection.

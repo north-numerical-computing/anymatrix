@@ -1,8 +1,8 @@
 function [A,dims,properties] = hadamard(n,k)
 %HADAMARD   Hadamard matrices.
 %   A = HADAMARD(n,k) produces the k'th Hadamard matrix of order n
-%   in a set of 658 Hadamard matrices collected by N. J. A. Sloane
-%   ("Anything free comes with no guarantee").
+%   in a set of 659 Hadamard matrices, most of them collected by
+%   N. J. A. Sloane ("Anything free comes with no guarantee").
 %   A Hadamard matrix is a matrix of 1s and -1s whose rows and columns 
 %   are mutually orthogonal.
 %   The largest dimension of the matrices is 428 and there are 487
@@ -17,9 +17,7 @@ function [A,dims,properties] = hadamard(n,k)
 
 properties = {'orthogonal', 'square', 'real', 'fixed size', 'integer'};
 
-persistent read_dims;
-persistent sizes;
-persistent names;
+persistent read_dims sizes names 
 
 % Read file storage to extract n and k available.
 if isempty(read_dims)
@@ -36,13 +34,14 @@ if isempty(read_dims)
     nn = length(nvals);
     ninds = [ninds; length(sizes)+1];
     
-    % Determinate numbers of matrices of each size n.
+    % Determine numbers of matrices of each size n.
     n_nvals(1:nn) = ninds(2:nn+1)-ninds(1:nn);
     
     nvals = nvals(:);
     n_nvals = n_nvals(:);
     
     read_dims = [nvals n_nvals];
+
 end
 
 dims = read_dims;
@@ -75,6 +74,8 @@ if n == 16 && k == 8
     end
     A(:, 16) = 1;
     A(16, :) = 1;
+elseif n == 92 && k == 1
+   A = baumert92;            % Special case.
 elseif n == 428
    A = load('had-428.txt');  % Special case.
 else
@@ -89,4 +90,6 @@ else
        row = data{i};
        A(i, ((row == '-') | (row == '0'))) = -1;    
    end 
+end
+
 end

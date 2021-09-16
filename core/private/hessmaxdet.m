@@ -15,7 +15,7 @@ function [A,properties] = hessmaxdet(n,d,k)
 %   M. Fasi and G. M. Negri Porzio, Determinants of Normalized Bohemian Upper
 %   Hessenberg Matrices, Electron. J. Linear Algebra 36, 352-366, 2020.
 
-properties = {'hessenberg', 'toeplitz', 'integer'};
+properties = {'hessenberg', 'toeplitz', 'integer', 'parameter-dependent'};
 if nargin == 0, A = []; return, end
 
 if nargin < 3, k = 0; end

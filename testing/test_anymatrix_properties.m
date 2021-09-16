@@ -1,15 +1,17 @@
 function test_anymatrix_properties(regenerate_tests, warnings_on)
 %TEST_ANYMATRIX_PROPERTIES  Test anymatrix matrix properties.
-%   This function auto generates the function-based unit tests for matrix
-%   properties and runs them.
-%
-%   Warnings are generated for properties that do not have tests available
-%   if warnings_on == 1.
-%
-%   Tests are regenerated if regenerate_tests=1.
+%   TEST_ANYMATRIX_PROPERTIES(regenerate_tests, warnings_on)
+%   runs unit tests for anymatrix matrix properties. 
+%   It auto generates the function-based unit tests.
+%   If regenerate_tests == 1 (default 0) then the tests are regenerated.
+%   If warnings_on == 1 (default 0) then warnings are generated for
+%   properties that do not have tests available
 
 anymatrix('sc');
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
+
+if nargin < 1 || isempty(regenerate_tests), regenerate_tests = 0; end
+if nargin < 2, warnings_on = 0; end
 
 % Check which properties recognized by anymatrix have tests and throw
 % warnings for those that can't be tested.

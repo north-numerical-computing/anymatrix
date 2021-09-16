@@ -2,11 +2,13 @@
 
 ## About
 
-`Anymatrix` is a MATLAB matrix collection with an interface to organize
-matrices into groups and sets.  It provides commands to search for matrices
-by their properties and generate matrices by their unique IDs.
+`Anymatrix` is a MATLAB toolbox that provides
+an extensible collection of matrices with an interface to organize
+matrices into groups and sets and search for matrices
+by their properties.
 
-Currently, the built-in collection contains 142 matrices organized into 7 groups:
+Currently, the built-in collection contains 142 matrices organized into 7
+groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
 * [core](core/private/Contents.m) - miscellaneous matrices.
@@ -69,17 +71,17 @@ M = anymatrix('lookfor', ' zero ')
 
 ### Short forms
 
-For invocations that use only strings, the MATLAB command form of
+For invocations that use only character vectors or strings, the MATLAB command form of
 invocation (as opposed to the functional form) can be used:
 ```
-anymatrix help 'core/beta'
+anymatrix help core/beta
 ```
 
 Commands can be abbreviated to the first one or two letters that uniquely
 specify them:
 
 ```
-anymatrix p 'core/beta'
+anymatrix p core/beta
 ```
 
 ### Full list of accepted commands

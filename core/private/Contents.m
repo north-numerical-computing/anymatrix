@@ -8,7 +8,9 @@
 %   fourier    - Fourier matrix.
 %   gfpp       - Matrix giving maximal growth for Gaussian elim. with pivoting.
 %   hessfull01 - Totally nonnegative lower Hessenberg Toeplitz matrix.
-%   nilpotri   - Nilpotent tridiagonal matrix (sparse).
+%   kms_nonsymm - Nonsymmetric Kac-Murdock-Szego Toeplitz matrix.
+%   nilpot_tridiag - Nilpotent tridiagonal matrix (sparse).
+%   nilpot_triang - Nilpotent triangular matrix.
 %   rschur     - Upper quasi-triangular matrix.
 %   soules     - Soules matrix.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
