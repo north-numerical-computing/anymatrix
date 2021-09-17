@@ -1,4 +1,4 @@
-# `anymatrix` - A MATLAB matrix collection with an interface to organize matrices.
+# `anymatrix` - Am Extensible MATLAB matrix collection 
 
 ## About
 
@@ -7,7 +7,7 @@ an extensible collection of matrices with an interface to organize
 matrices into groups and sets and search for matrices
 by their properties.
 
-Currently, the built-in collection contains 142 matrices organized into 7
+Currently, the built-in collection contains 158 matrices organized into 7
 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
