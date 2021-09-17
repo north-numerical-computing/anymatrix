@@ -1,4 +1,4 @@
-# `anymatrix` - Am Extensible MATLAB matrix collection 
+# `anymatrix` - Am extensible MATLAB matrix collection 
 
 ## About
 
