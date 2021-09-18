@@ -141,14 +141,13 @@ persistent supported_properties
 
 % Get the directory containing the anymatrix.m file.
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
-% Add anymatrix/sets and anymatrix/testing to the search path.
-addpath(strcat(root_path, '/sets'));
-addpath(strcat(root_path, '/testing'));
-
 
 % Scan the file structure of the collection to obtain matrix, group and
 % set IDs, if it hasn't been scanned yet.
 if isempty(files_scanned)
+    % Add anymatrix/sets and anymatrix/testing to the search path.
+    addpath(strcat(root_path, '/sets'));
+    addpath(strcat(root_path, '/testing'));
     supported_properties = prop_list();
     [set_IDs, group_IDs, matrix_IDs, properties] = ...
         scan_filesystem();
