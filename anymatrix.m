@@ -234,9 +234,9 @@ elseif startsWith('lookfor', command)
     varargout{1} = lookfor_term(arg);
 elseif startsWith('properties', command)
     if (nargin == 1)
-        varargout{1} = supported_properties;
+        varargout{1} = sort(supported_properties);
     elseif matches(arg, matrix_ID_pat)
-        varargout{1} = properties{strcmp(matrix_IDs, arg)};
+        varargout{1} = sort(properties{strcmp(matrix_IDs, arg)});
     else
         varargout{1} = search_by_properties(arg);
     end
