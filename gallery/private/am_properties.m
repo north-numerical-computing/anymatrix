@@ -26,7 +26,7 @@ P = {
                 'parameter-dependent'}
     'grcar', {'hessenberg', 'toeplitz', 'integer', 'parameter-dependent'}
     'hanowa', {'parameter-dependent'}
-    'house', {}
+    'house', {'orthogonal', 'parameter-dependent'}
     'integerdata', {'rectangular', 'integer', 'parameter-dependent'}
     'invhess', {'integer', 'parameter-dependent'}
     'invol', {'involutory', 'ill conditioned'}
@@ -56,7 +56,7 @@ P = {
     'poisson', {'symmetric', 'positive definite'}
     'prolate', {'symmetric', 'positive definite', 'toeplitz', ...
                 'parameter-dependent', 'ill conditioned'}
-    'qmult', {}
+    'qmult', {'random', 'orthogonal'}
     'randcolu', {'random', 'parameter-dependent', 'rectangular', 'square'}
     'randcorr', {'parameter-dependent', 'random', 'correlation'}
     'randhess', {'hessenberg', 'orthogonal', 'random', ...
