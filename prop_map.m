@@ -8,7 +8,8 @@ function M = prop_map
 M = {'banded', {'tridiagonal'}
      'binary', {'permutation'}
      'integer', {'binary'}
-     'nonnegative', {'binary', 'positive', 'stochastic', 'totally nonnegative'}
+     'nonnegative', {'binary', 'positive', 'stochastic', ...
+                     'totally nonnegative'}
      'orthogonal', {'permutation'}
      'positive', {'totally positive'}
      'symmetric', {'correlation', 'hankel'}
