@@ -46,7 +46,6 @@ P = {
     'square'
     'stochastic'
     'symmetric'
-    'positive definite'
     'toeplitz'
     'totally nonnegative'
     'totally positive'
