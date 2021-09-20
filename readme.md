@@ -7,7 +7,7 @@ an extensible collection of matrices with an interface to organize
 matrices into groups and sets and search for matrices
 by their properties.
 
-Currently, the built-in collection contains 158 matrices organized into 7
+Currently, the built-in collection contains 146 matrices organized into 7
 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
