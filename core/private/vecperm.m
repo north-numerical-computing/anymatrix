@@ -3,13 +3,14 @@ function [P,properties] = vecperm(m,n)
 %   P = VECPERM(M,N) is the vec-permutation matrix, an M*N-by-M*N
 %   permutation matrix with the property that if A is M-by-N then
 %   vec(A) = P*vec(A').  If N is omitted, it defaults to M.
+%   The vec-permutation matrix is also known as the commutation matrix.
 
 %   P is formed by taking every n'th row from EYE(M*N), starting with
 %   the first and working down; see p. 277 of the reference.
 
 %   Reference:
-%   H. V. Henderson and S. R. Searle The vec-permutation matrix,
-%   the vec operator and Kronecker products: A review Linear and
+%   H. V. Henderson and S. R. Searle, The vec-permutation matrix,
+%   the vec operator and Kronecker products: A review, Linear and
 %   Multilinear Algebra, 9 (1981), pp. 271-288.
 
 properties = {'orthogonal', 'permutation'};
