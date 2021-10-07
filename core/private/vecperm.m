@@ -10,7 +10,7 @@ function [P,properties] = vecperm(m,n)
 
 %   Reference:
 %   H. V. Henderson and S. R. Searle, The vec-permutation matrix,
-%   the vec operator and Kronecker products: A review, Linear and
+%   the vec operator and Kronecker products: A review, Linear 
 %   Multilinear Algebra, 9 (1981), pp. 271-288.
 
 properties = {'orthogonal', 'permutation'};
