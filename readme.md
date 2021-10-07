@@ -2,10 +2,9 @@
 
 ## About
 
-`Anymatrix` is a MATLAB toolbox that provides
-an extensible collection of matrices with an interface to organize
-matrices into groups and sets and search for matrices
-by their properties.
+`Anymatrix` is a MATLAB toolbox that provides an extensible collection of
+matrices, organized in groups, with the ability to search the collection by
+matrix properties.
 
 Currently, the built-in collection contains 146 matrices organized into 7
 groups:
@@ -103,6 +102,10 @@ The following groups are available for downloading into Anymatrix.
  
 - [matrices-mp-cosm](https://github.com/Xiaobo-Liu/matrices-mp-cosm):
   collection of matrices for testing the matrix cosine.
+  
+- [randsvdfast-matlab](https://github.com/mfasi/randsvdfast-matlab):
+  provides functionality similar to anymatrix('gallery/randsvd') but uses a
+  faster algorithm.
 
 ## Requirements
 
