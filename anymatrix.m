@@ -118,9 +118,11 @@ built_in_groups = {
 
 % Matrix ID pattern
 matrix_ID_pat = ...
-    asManyOfPattern(alphanumericsPattern | characterListPattern("_")) + ...
+    asManyOfPattern(alphanumericsPattern | characterListPattern("_") | ...
+                    characterListPattern("-")) + ...
     '/' + ...
-    asManyOfPattern(alphanumericsPattern | characterListPattern("_"));
+    asManyOfPattern(alphanumericsPattern | characterListPattern("_") | ...
+                    characterListPattern("-"));
 
 % Convert inputs to char arrays if supplied as strings.
 if (nargin > 0) && isstring(varargin{1})
@@ -172,7 +174,13 @@ if (nargin >= 2)
         command = varargin{2};
         arg = varargin{1};
     end
+    % Allow user's use hyphens instead of underscores, but replace here.
+    if ischar(arg) && startsWith({'groups'}, command)
+        arg = strrep(lower(arg), '-', '_');
+    end
 end
+% Hyphens -> underscores in matrix IDs.
+command = strrep(lower(command), '-', '_');
 
 % Capture some common errors in the arguments.
 if matches(command, matrix_ID_pat)
@@ -222,7 +230,7 @@ elseif startsWith('groups', command)
         varargout{1} = matrix_IDs(contains(matrix_IDs, ...
                                            strcat(arg, '/')));
     else
-        update_git_group(varargin{2}, varargin{3});
+        update_git_group(arg, varargin{3});
     end
 elseif startsWith('help', command)
     if (nargin == 1)
@@ -277,7 +285,7 @@ elseif startsWith('test', command)
         run_group_tests(arg);
     end
 else
-    [varargout{1:nargout}] = generate_matrix(varargin{1:nargin});
+    [varargout{1:nargout}] = generate_matrix(command, varargin{2:nargin});
 end
 
     % Top level function for scanning the files.
