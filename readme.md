@@ -117,4 +117,5 @@ Nicholas J. Higham and Mantas Mikaitis. *Anymatrix: An Extendable MATLAB Matrix 
 
 ## Licence
 
-See [license.txt](license.txt) for licensing information.
+The code is distributed under the terms of the BSD 2-Clause License;
+see [license.txt](license.txt).
