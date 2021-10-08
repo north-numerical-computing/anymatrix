@@ -175,7 +175,8 @@ if (nargin >= 2)
         arg = varargin{1};
     end
     % Allow user's use hyphens instead of underscores, but replace here.
-    if ischar(arg) && startsWith({'groups'}, command)
+    if ischar(arg) && ~any(startsWith({'properties', 'lookfor', ...
+                                       'sets'}, command))
         arg = strrep(lower(arg), '-', '_');
     end
 end
