@@ -1,12 +1,11 @@
 function varargout = anymatrix(varargin)
 %ANYMATRIX  Interface for accessing the Anymatrix collections.
-%   ANYMATRIX is a user interface for the Anymatrix matrix collections.
+%   ANYMATRIX is a user interface for the Anymatrix matrix collection.
 %   It provides commands to list matrices, groups and sets, search for
 %   matrices by properties, and obtain the matrices by their IDs.
 %
-%   The interface comes with a built-in matrix collection, but users can
-%   develop their own collections either by creating them from scratch or
-%   extending the built-in collection.
+%   The interface comes with built-in groups of matrices, but users can
+%   develop their own groups and make them available to other users.
 %
 %   The built-in collection contains 146 matrices organized in 7 groups:
 %
@@ -174,7 +173,7 @@ if (nargin >= 2)
         command = varargin{2};
         arg = varargin{1};
     end
-    % Allow user's use hyphens instead of underscores, but replace here.
+    % Allow use of hyphens instead of underscores, but replace here.
     if ischar(arg) && ~any(startsWith({'properties', 'lookfor', ...
                                        'sets'}, command))
         arg = strrep(lower(arg), '-', '_');
