@@ -62,7 +62,7 @@ P = {
     'randhess', {'hessenberg', 'orthogonal', 'random', ...
                  'parameter-dependent'}
     'randjorth', {'random', 'parameter-dependent', 'pseudo-orthogonal'}
-    'rando', {'rectangular', 'random', 'integer'}
+    'rando', {'rectangular', 'square', 'random', 'integer'}
     'randsvd', {'orthogonal', 'rectangular', 'square', 'random'}
     'redheff', {'binary', 'nonnegative', 'eigenvalues'}
     'riemann', {'integer', 'eigenvalues'}

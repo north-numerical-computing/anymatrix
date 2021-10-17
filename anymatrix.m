@@ -13,7 +13,7 @@ function varargout = anymatrix(varargin)
 %                  from networks.
 %       core     - miscellaneous matrices.
 %       gallery  - matrices from the MATLAB gallery.
-%       hadamard - a large collection of Hadamard matrices.
+%       hadamard - a large collection of (complex) Hadamard matrices.
 %       matlab   - other MATLAB matrices (not in gallery).
 %       nessie   - matrices from real-life networks.
 %       regtools - matrices from regularization problems.
