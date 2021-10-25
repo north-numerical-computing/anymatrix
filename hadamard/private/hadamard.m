@@ -9,11 +9,17 @@ function [A,dims,properties] = hadamard(n,k)
 %   of order 28.
 %   [~,dims] = HADAMARD returns in dims(:,1) the available
 %   dimensions and in dims(:,2) the number of matrices of dimension 
-%   dims(:,1) available.  For details of the matrices see the reference.
+%   dims(:,1) available.
+%   HADAMARD(16,9) is a matrix of Edelman and Friedman (1998) that
+%   disproves a conjecture about the pivots in LU factorization with
+%   complete pivoting.
+%   For details of the other matrices see the Sloan website.
 
-%   Reference:
+%   References:
+%   Alan Edelman and David Friedman, A Counterexample to a Hadamard Matrix
+%      Pivot Conjecture, Linear Multilinear Algebra 44, 53-56, 1998.
 %   N. J. A. Sloane, A Library of Hadamard Matrices,
-%   http://neilsloane.com/hadamard/.
+%      http://neilsloane.com/hadamard/.
 
 properties = {'orthogonal', 'square', 'real', 'fixed size', 'integer'};
 
