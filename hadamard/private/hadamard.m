@@ -1,11 +1,11 @@
 function [A,dims,properties] = hadamard(n,k)
 %HADAMARD   Hadamard matrices.
 %   A = HADAMARD(n,k) produces the k'th Hadamard matrix of order n
-%   in a set of 659 Hadamard matrices, most of them collected by
+%   in a set of 660 Hadamard matrices, most of them collected by
 %   N. J. A. Sloane ("Anything free comes with no guarantee").
 %   A Hadamard matrix is a matrix of 1s and -1s whose rows and columns 
 %   are mutually orthogonal.
-%   The largest dimension of the matrices is 428 and there are 487
+%   The largest dimension of the matrices is 428 and there are 489
 %   of order 28.
 %   [~,dims] = HADAMARD returns in dims(:,1) the available
 %   dimensions and in dims(:,2) the number of matrices of dimension 

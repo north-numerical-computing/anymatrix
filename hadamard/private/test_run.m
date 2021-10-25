@@ -7,7 +7,7 @@
 nn = length(dims);
 for i = 1:nn
     n = dims(i,1);
-    fprintf('Testing Hadamard matrices of dimension %2.0f.\n',n)
+    fprintf('Testing %3.0f Hadamard matrices of dimension %2.0f.\n',dims(i,2),n)
     for k = 1:dims(i,2)
         A = hadamard(n,k); 
         check(1) = any(any(A ~= 1 & A ~= -1));
