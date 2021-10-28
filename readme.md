@@ -17,6 +17,13 @@ groups:
 * [nessie](nessie/private/Contents.m) - matrices from real-life networks.
 * [regtools](regtools/private/Contents.m) - matrices from regularization problems.
 
+## What's New
+
+The following matrices have been added since v1.0.
+
+- core/collatz
+- Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
+
 ## Quick start
 
 ### Inspect and generate a matrix
