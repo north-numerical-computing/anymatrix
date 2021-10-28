@@ -122,7 +122,10 @@ MATLAB 2020b or newer is required.
 
 Nicholas J. Higham and Mantas Mikaitis. [*Anymatrix: An Extendable MATLAB Matrix Collection, Users' Guide*](http://eprints.maths.manchester.ac.uk/2834/). MIMS EPrint 2021.15, Manchester Institute for Mathematical Sciences, The University of Manchester, UK. Oct. 2021.
 
-Nicholas J. Higham and Mantas Mikaitis. [*Anymatrix: An Extendable MATLAB Matrix Collection*](http://eprints.maths.manchester.ac.uk/2835/). MIMS EPrint 2021.16, Manchester Institute for Mathematical Sciences, The University of Manchester, UK. Oct. 2021.
+Nicholas J. Higham and Mantas Mikaitis. [*Anymatrix: An Extendable MATLAB
+Matrix Collection*](http://eprints.maths.manchester.ac.uk/2835/). MIMS
+EPrint 2021.16, Manchester Institute for Mathematical Sciences, The
+University of Manchester, UK. Oct. 2021; to appear in Numer. Algorithms.
 
 ## Licence
 
