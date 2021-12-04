@@ -12,6 +12,6 @@ core/augment: [1, 1; 2, 2]
 % Wilkinson matrix with a single input.
 gallery/wilk: 3
 
-% Two pascal matrices with different input arguments.
+% Two Pascal matrices with different input arguments.
 matlab/pascal: 5, 1
 matlab/pascal: 5, 2

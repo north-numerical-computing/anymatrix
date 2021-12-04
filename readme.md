@@ -114,6 +114,10 @@ The following groups are available for downloading into Anymatrix.
   provides functionality similar to anymatrix('gallery/randsvd') but uses a
   faster algorithm.
 
+## Examples
+
+The examples/ directory contains codes that illustrate the use of Anymatrix.
+
 ## Requirements
 
 MATLAB 2020b or newer is required.

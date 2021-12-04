@@ -1,5 +1,5 @@
 function [A,properties] = edelman27
-%EDELMAN27  Matrix for which det is computed as the wrong integer.
+%EDELMAN27  Matrix for which det computes the wrong integer.
 %   A = EDELMAN27 is a 27-by-27 matrix of 1s and -1s for which the
 %   MATLAB det function returns
 %   >> format long g, det(A)
