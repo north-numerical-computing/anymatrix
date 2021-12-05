@@ -116,7 +116,8 @@ The following groups are available for downloading into Anymatrix.
 
 ## Examples
 
-The examples/ directory contains codes that illustrate the use of Anymatrix.
+The examples/ directory contains codes that illustrate 
+how to run tests over subsets of the matrices in Anymatrix.
 
 ## Requirements
 

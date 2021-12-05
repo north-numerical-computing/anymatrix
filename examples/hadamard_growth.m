@@ -1,4 +1,7 @@
 %HADAMARD_GROWTH  Growth factors for complete pivoting on Hadamard matrices.
+%   Compute growth factor for LU factorization with complete pivoting
+%   for all real and complex Hadamard matrices in Anymatrix, checking for a
+%   growth factor bigger than n.
 %   Requires function GEP from the Matrix Computation Toolbox
 %   (http://www.maths.manchester.ac.uk/~higham/mctoolbox).
 

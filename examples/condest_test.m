@@ -1,4 +1,6 @@
 %CONDEST_TEST  Test the CONDEST condition estimator.
+%   Run CONDEST on all built-in square Anymatrix matrices, computing the
+%   underestimation ratios.
 
 n = 16; rng(1)
 mats = anymatrix('p','square');
