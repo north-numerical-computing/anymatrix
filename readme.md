@@ -6,7 +6,7 @@
 matrices, organized in groups, with the ability to search the collection by
 matrix properties.
 
-Currently, the built-in collection contains 146 matrices organized into 7
+Currently, the built-in collection contains 148 matrices organized into 7
 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.

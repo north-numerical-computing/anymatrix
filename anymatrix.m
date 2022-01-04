@@ -7,7 +7,7 @@ function varargout = anymatrix(varargin)
 %   The interface comes with built-in groups of matrices, but users can
 %   develop their own groups and make them available to other users.
 %
-%   The built-in collection contains 146 matrices organized in 7 groups:
+%   The built-in collection contains 148 matrices organized in 7 groups:
 %
 %       contest  - the CONTEST test matrix toolbox of random matrices
 %                  from networks.
