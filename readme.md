@@ -6,8 +6,7 @@
 matrices, organized in groups, with the ability to search the collection by
 matrix properties.
 
-Currently, the built-in collection contains 148 matrices organized into 7
-groups:
+Currently, the built-in collection contains matrices organized into 7 groups:
 
 * [contest](contest/private/Contents.m) - the CONTEST test matrix toolbox of random matrices from networks.
 * [core](core/private/Contents.m) - miscellaneous matrices.
@@ -22,6 +21,7 @@ groups:
 The following matrices have been added since v1.0.
 
 - core/collatz
+- core/hess_sublu
 - core/pick
 - Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
 

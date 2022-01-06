@@ -1,7 +1,7 @@
 % Anymatrix - a MATLAB matrix collection.
 % Version 1.x 4-Jan-2022
 %
-% The built-in collection contains 148 matrices organized in 7 groups:
+% The built-in collection contains matrices organized in 7 groups:
 %
 %   contest  - the CONTEST test matrix toolbox of random matrices
 %                  from networks.
