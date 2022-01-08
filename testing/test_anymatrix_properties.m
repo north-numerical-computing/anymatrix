@@ -42,7 +42,7 @@ if isfile(test_function_file)
 end
 % Open a file containing unit tests; if we need to regenerate the contents
 % or if the file is empty/non-existent, write in a function definition.
-if regenerate_tests == 1 || ~startsWith(curr_contents, ...
+if regenerate_tests == 1 | ~startsWith(curr_contents, ...
         'function tests = anymatrix_func_based_tests')
     fileID = fopen(test_function_file, 'w+');
     fprintf(fileID, header);

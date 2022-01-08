@@ -22,10 +22,16 @@ The following matrices have been added since v1.0.
 
 - core/collatz
 - core/hess_sublu
+- core/milnes
 - core/pick
 - Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
 
 ## Quick start
+
+### Installation
+
+Clone the repository and add the root directory anymatrix/ to the MATLAB
+search path.
 
 ### Inspect and generate a matrix
 
