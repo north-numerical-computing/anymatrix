@@ -13,7 +13,7 @@ function [A,dims,properties] = hadamard(n,k)
 %   HADAMARD(16,9) is a matrix of Edelman and Friedman (1998) that
 %   disproves a conjecture about the pivots in LU factorization with
 %   complete pivoting.
-%   For details of the other matrices see the Sloan website.
+%   For details of the other matrices see http://neilsloane.com/hadamard/
 
 %   References:
 %   Alan Edelman and David Friedman, A Counterexample to a Hadamard Matrix

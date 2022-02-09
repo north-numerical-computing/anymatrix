@@ -8,7 +8,7 @@ function [A,properties] = hessmaxdet(n,d,k)
 %   HESSMAXDET(n,d,1) is the hollow form of the same matrix, which has zero
 %   diagonal. It has maximal determinant over all matrices of the same form
 %   with entries between -d and d in the strict upper triangle.
-%   A formula for the determinant is known in terms of d-weighte Fibonacci
+%   A formula for the determinant is known in terms of d-weighted Fibonacci
 %   numbers.
 
 %   Reference:
