@@ -314,7 +314,7 @@ end
         IDs = {};
         for k = 1:length(contents)
             if contents(k).isdir && ~ismember(contents(k).name, ...
-                    {'.', '..', 'sets', '.git', 'testing'})
+                    {'.', '..', 'sets', '.git', 'testing', 'examples'})
                 IDs{end+1} = contents(k).name;
                 addpath(strcat(root_path, '/', contents(k).name));
             end
