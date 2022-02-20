@@ -1,7 +1,7 @@
 function [P,properties] = blockhouse(Z)
 %BLOCKHOUSE  Block Householder matrix.
 %   P = BLOCKHOUSE(Z) is a block Householder matrix defined in terms of
-%   the n-by-p matrix Z, where n >= p.
+%   the n-by-p matrix Z, where n >= p, by P = eye(n) - 2*Z*pinv(Z).
 %   As a special case, BLOCKHOUSE(n), where n is a positive integer,
 %   is the same as BLOCKHOUSE(Z), where Z is n-by-2 and Z(:) = 1:2*n.
 %   P is a symmetric, orthogonal, involutory matrix.
