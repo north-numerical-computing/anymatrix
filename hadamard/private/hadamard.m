@@ -4,7 +4,8 @@ function [A,dims,properties] = hadamard(n,k)
 %   in a set of 660 Hadamard matrices, most of them collected by
 %   N. J. A. Sloane ("Anything free comes with no guarantee").
 %   A Hadamard matrix is a matrix of 1s and -1s whose rows and columns 
-%   are mutually orthogonal.
+%   are mutually orthogonal. An n-by-n Hadamard matrix A satisfies
+%   A'*A = A*A' = n*eye(n).
 %   The largest dimension of the matrices is 428 and there are 489
 %   of order 28.
 %   [~,dims] = HADAMARD returns in dims(:,1) the available
@@ -21,7 +22,7 @@ function [A,dims,properties] = hadamard(n,k)
 %   N. J. A. Sloane, A Library of Hadamard Matrices,
 %      http://neilsloane.com/hadamard/.
 
-properties = {'orthogonal', 'square', 'real', 'fixed size', 'integer'};
+properties = {'square', 'real', 'fixed size', 'integer'};
 
 persistent read_dims sizes names 
 

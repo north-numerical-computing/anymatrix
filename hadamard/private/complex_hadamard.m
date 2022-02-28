@@ -3,7 +3,8 @@ function [A,dims,properties] = complex_hadamard(n,k)
 %   A = COMPLEX_HADAMARD(n,k) produces the k'th Hadamard matrix of order n
 %   in a set of complex Hadamard matrices.
 %   A complex Hadamard matrix is an n-by-n matrix A with elements of modulus 1
-%   whose rows and columns are mutually orthogonal, that is, Q'*Q = n*EYE(n).
+%   whose rows and columns are mutually orthogonal, that is,
+%   Q'*Q = Q*Q' = n*eye(n).
 %   For most n, a scaled Fourier matrix is returned.
 %   The exceptional values are obtained with 
 %   [~,dims] = COMPLEX_HADAMARD, which returns in dims(:,1) the available

@@ -2,7 +2,7 @@ function P = am_properties
 
 P = {
     'compan', {}
-    'hadamard', {'orthogonal', 'square', 'fixed size', 'integer'}
+    'hadamard', {'square', 'fixed size', 'integer'}
     'hankel', {'hankel'}
     'hilb', {'symmetric', 'positive definite', ... 
              'totally positive', 'inverse', 'ill conditioned'}
