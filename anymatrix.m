@@ -316,7 +316,8 @@ end
     function out = is_group_dir(directory)
         % Check dir is not current or previous directories '.' and '..',
         % and check dir has two files additionally to '.' and '..'.
-        if (any(strcmp(dir, {'.', '..'})) || (length(dir(directory))) ~= 4)
+        if (any(strcmp(directory, {'.', '..'})) || ...
+                (length(dir(directory))) ~= 4)
             out = false;
         else
             % Check dir has a 'private' directory and a file
