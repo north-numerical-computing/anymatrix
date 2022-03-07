@@ -308,13 +308,29 @@ end
         IDs = IDs.';
     end
 
+    % Check if a folder in anymatrix root directory is a group folder.
+    % Group directories have one private/ directory and one file named
+    % anymatrix_<dir_name>.m where <dir_name> is the directory name.
+    function out = is_group_dir(directory)
+        % Check dir is not current or previous directories '.' and '..',
+        % and check dir has two files additionally to '.' and '..'.
+        if (any(strcmp(dir, {'.', '..'})) || (length(dir(directory))) ~= 4)
+            out = false;
+        else
+            % Check dir has a 'private' directory and a file
+            % anymatrix_<dir_name>.
+            out = ~(isempty(dir(strcat(directory, '/private/'))) || ...
+                isempty(dir( ...
+                    strcat(directory, '/anymatrix_', directory, '.m'))));
+        end
+    end
+
     % Scan the root folder and obtain the group IDs.
     function IDs = scan_groups()
         contents = dir(root_path);
         IDs = {};
         for k = 1:length(contents)
-            if contents(k).isdir && ~ismember(contents(k).name, ...
-                    {'.', '..', 'sets', '.git', 'testing', 'examples'})
+            if contents(k).isdir && is_group_dir(contents(k).name)
                 IDs{end+1} = contents(k).name;
                 addpath(strcat(root_path, '/', contents(k).name));
             end
