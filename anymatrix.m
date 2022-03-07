@@ -317,14 +317,15 @@ end
         % Check dir is not current or previous directories '.' and '..',
         % and check dir has two files additionally to '.' and '..'.
         if (any(strcmp(directory, {'.', '..'})) || ...
-                (length(dir(directory))) ~= 4)
+                (length(dir(strcat(root_path, '/', directory)))) ~= 4)
             out = false;
         else
             % Check dir has a 'private' directory and a file
             % anymatrix_<dir_name>.
-            out = ~(isempty(dir(strcat(directory, '/private/'))) || ...
-                isempty(dir( ...
-                    strcat(directory, '/anymatrix_', directory, '.m'))));
+            out = ~(isempty(dir(strcat(root_path, '/', directory, ...
+                                       '/private/'))) || ...
+                    isempty(dir(strcat(root_path, '/', directory, ...
+                                       '/anymatrix_', directory, '.m'))));
         end
     end
 
