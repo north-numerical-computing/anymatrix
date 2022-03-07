@@ -69,7 +69,9 @@ function varargout = anymatrix(varargin)
 %
 %   Documentation:
 %   Nicholas J. Higham and Mantas Mikaitis, Anymatrix: An Extendable MATLAB
-%   Matrix Collection, User's Guide, in preparation.
+%   Matrix Collection, User's Guide, MIMS EPrint 2021.15, Manchester
+%   Institute for Mathematical Sciences, The University of Manchester,
+%   UK, October 2021.
 
 %   References and acknowledgments.
 % 
