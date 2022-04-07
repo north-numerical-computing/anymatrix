@@ -1,17 +1,27 @@
-function test_anymatrix_properties(regenerate_tests, warnings_on)
+function results = test_anymatrix_properties(regenerate_tests, ...
+    warnings_on, results_out)
 %TEST_ANYMATRIX_PROPERTIES  Test anymatrix matrix properties.
 %   TEST_ANYMATRIX_PROPERTIES(regenerate_tests, warnings_on)
 %   runs unit tests for anymatrix matrix properties. 
 %   It auto generates the function-based unit tests.
 %   If regenerate_tests == 1 (default 0) then the tests are regenerated.
 %   If warnings_on == 1 (default 0) then warnings are generated for
-%   properties that do not have tests available
+%   properties that do not have tests available.
+%   If results_out == 1 (default 0) then the test results are returned
+%   which can be useful for generating reports with generatePDFReport()
+%   and other similar functions.
+
+import matlab.unittest.plugins.DiagnosticsRecordingPlugin
+import matlab.unittest.Verbosity
+import matlab.unittest.plugins.TestRunProgressPlugin
+import matlab.unittest.plugins.DiagnosticsOutputPlugin
 
 anymatrix('sc');
 root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 
 if nargin < 1 || isempty(regenerate_tests), regenerate_tests = 0; end
 if nargin < 2, warnings_on = 0; end
+if nargin < 3, results_out = 0; end
 
 % Check which properties recognized by anymatrix have tests and throw
 % warnings for those that can't be tested.
@@ -120,13 +130,21 @@ fclose(fileID);
 
 % Configure a test runner.
 runner = matlab.unittest.TestRunner.withNoPlugins;
-import matlab.unittest.plugins.TestRunProgressPlugin
-import matlab.unittest.plugins.DiagnosticsOutputPlugin
 runner.addPlugin(TestRunProgressPlugin.withVerbosity(2))
 runner.addPlugin(DiagnosticsOutputPlugin('OutputDetail', 2))
+
+if (results_out)
+    runner.addPlugin(DiagnosticsRecordingPlugin( ...
+        IncludingPassingDiagnostics=false,LoggingLevel=Verbosity.Verbose))
+end
 
 % Run the testsuite.
 test_results = runner.run(anymatrix_func_based_tests);
 table(test_results)
+
+% Output the test results if required.
+if results_out
+    results = test_results;
+end
 
 end
