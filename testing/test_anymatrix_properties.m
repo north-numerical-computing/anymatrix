@@ -1,7 +1,7 @@
 function results = test_anymatrix_properties(regenerate_tests, ...
     warnings_on, results_out)
 %TEST_ANYMATRIX_PROPERTIES  Test anymatrix matrix properties.
-%   TEST_ANYMATRIX_PROPERTIES(regenerate_tests, warnings_on)
+%   TEST_ANYMATRIX_PROPERTIES(regenerate_tests, warnings_on, results_out)
 %   runs unit tests for anymatrix matrix properties. 
 %   It auto generates the function-based unit tests.
 %   If regenerate_tests == 1 (default 0) then the tests are regenerated.
