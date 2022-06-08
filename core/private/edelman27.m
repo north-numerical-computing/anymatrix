@@ -5,7 +5,7 @@ function [A,properties] = edelman27
 %   >> format long g, det(A)
 %   ans =
 %              839466457497601
-%   yet the exact dterminant is 839466457497600.
+%   yet the exact determinant is 839466457497600.
 %   The matrix was found by Alan Edelman.
 %   Strange as it may seem, this behavior does not indicate anything is
 %   wrong with the det function and it is consistent with rounding error
