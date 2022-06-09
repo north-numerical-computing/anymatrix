@@ -141,7 +141,7 @@ Manchester, UK. Oct. 2021.
 
 Nicholas J. Higham and Mantas Mikaitis. [*Anymatrix: An Extendable MATLAB
 Matrix Collection*](https://doi.org/10.1007/s11075-021-01226-2). Numer.
-Algorithms, 2021.
+Algorithms, 90:3. Dec. 2021.
 
 ## Licence
 

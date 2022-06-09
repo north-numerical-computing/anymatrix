@@ -1,5 +1,5 @@
 % Anymatrix - a MATLAB matrix collection.
-% Version 1.x 4-Jan-2022
+% Version 1.2 9-Jun-2022
 %
 % The built-in collection contains matrices organized in 7 groups:
 %
