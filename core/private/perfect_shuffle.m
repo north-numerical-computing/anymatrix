@@ -1,7 +1,7 @@
 function [P,properties] = perfect_shuffle(n,p)
 %PERFECT_SHUFFLE    Perfect shuffle permutation matrix.
-%   PERFECT_SHUFFLE(n,p), where p divides n, is the perfect shuffle 
-%   permutation matrix based on p "piles".
+%   PERFECT_SHUFFLE(n,p), where the integer p divides n, is the
+%   perfect shuffle permutation matrix based on p "piles".
 %   PERFECT_SHUFFLE(n) chooses p as the largest integer factor of n and
 %   returns the identity matrix if n is prime.
 
@@ -22,6 +22,7 @@ end
 I = eye(n);
 P = zeros(n);
 r = n/p;
+if r ~= round(r), error('Second parameter must divide first.'), end
 for i = 1:r
     P(1+(i-1)*p:i*p,:) = I(i:r:n,:);
 end
