@@ -20,7 +20,7 @@ function [C,properties] = augment(A, alpha)
 
 %   References:
 %   G. H. Golub and C. F. Van Loan, Matrix Computations, fourth
-%      Edition, Johns Hopkins University Press, Baltimore, Maryland,
+%      edition, Johns Hopkins University Press, Baltimore, Maryland,
 %      2013; sec. 5.3.8, 8.6.1.
 %   N. J. Higham, Accuracy and Stability of Numerical Algorithms,
 %      Second edition, Society for Industrial and Applied Mathematics,
