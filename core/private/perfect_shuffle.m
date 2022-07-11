@@ -18,6 +18,9 @@ if nargin == 1
     p = max(f);
     if p == n, P = eye(n); return, end
 end
+if mod(n,p) ~= 0
+  error('p should divide n');
+end
 
 I = eye(n);
 P = zeros(n);
