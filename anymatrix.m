@@ -186,7 +186,7 @@ command = strrep(lower(command), '-', '_');
 
 % Capture some common errors in the arguments.
 if matches(command, matrix_ID_pat)
-    if ~ismember(varargin{1}, matrix_IDs)
+    if ~ismember(command, matrix_IDs)
         error('Specified matrix ID was not found.');
     end
 elseif ~any(startsWith({'properties', 'groups', ...
