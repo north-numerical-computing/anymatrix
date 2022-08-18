@@ -121,6 +121,10 @@ The following groups are available for downloading into Anymatrix.
 - [randsvdfast-matlab](https://github.com/mfasi/randsvdfast-matlab):
   provides functionality similar to anymatrix('gallery/randsvd') but uses a
   faster algorithm.
+  
+- [am_matrix_market](https://github.com/imciner2/am_matrix_market):
+  provides functionality to download matrices from the
+  [NIST Matrix Market](https://math.nist.gov/MatrixMarket/)
 
 ## Examples
 
