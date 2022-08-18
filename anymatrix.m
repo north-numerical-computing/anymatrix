@@ -310,6 +310,27 @@ end
         IDs = IDs.';
     end
 
+    % Try to run function setup() if current group has one.
+    function run_setup_function(group_private_folder)
+        run_function_if_present(group_private_folder, 'setup');
+    end
+
+    % Try to run function update() if current group has one.
+    function run_update_function(group_private_folder)
+        run_function_if_present(group_private_folder, 'update');
+    end
+
+    % Run function if present.
+    function run_function_if_present(new_folder, function_name)
+        current_folder = cd(new_folder);
+        if exist([function_name '.m'], 'file')
+            fprintf('Running function %s()...', function_name);
+            feval(function_name);
+            fprintf('done.\n');
+        end
+        cd(current_folder);
+    end
+
     % Check if a folder in anymatrix root directory is a group folder.
     % Group directories have one private/ directory and one file named
     % anymatrix_<dir_name>.m where <dir_name> is the directory name.
@@ -612,6 +633,7 @@ end
 
             if (status == 0)
                 disp('Anymatrix remote group cloned.');
+                run_setup_function([group_folder 'private/']);
             else
                 rmdir(group_folder, 's');
             end
@@ -619,9 +641,12 @@ end
             if ~isfolder(strcat(group_folder, 'private/.git'))
                 error('Specified group is not a git group.');
             else
-                old_folder = cd(strcat(group_folder, 'private/'));
-                system('git pull', '-echo');
-                cd(old_folder);
+                [exit_code, output] = system('git pull', '-echo');
+                repository_changed = ~strcmp(output,...
+                                             ['Already up-to-date.', newline]);
+                if repository_changed
+                    run_update_function([group_folder 'private/']);
+                end
             end
         end
         % Rescan the anymatrix file system.
