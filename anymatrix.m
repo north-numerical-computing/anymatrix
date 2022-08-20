@@ -580,7 +580,8 @@ end
         group_folder = strcat(root_path, '/', group_ID, '/');
         % If the group does not exist locally, create folders and clone it.
         if ~isfolder(group_folder)
-            if startsWith(repo_ID, 'http')
+            if count(repo_ID, '/') > 1 || ...
+	        contains(repo_ID, ':') || contains(repo_ID, '@')
                 status = system(strcat( ...
                     "git clone ", """", repo_ID, """ ", ...
                     """", group_folder, 'private"'), '-echo');
