@@ -178,11 +178,11 @@ if (nargin >= 2)
     % Allow use of hyphens instead of underscores, but replace here.
     if ischar(arg) && ~any(startsWith({'properties', 'lookfor', ...
                                        'sets'}, command))
-        arg = strrep(lower(arg), '-', '_');
+        arg = strrep(arg, '-', '_');
     end
 end
 % Hyphens -> underscores in matrix IDs.
-command = strrep(lower(command), '-', '_');
+command = strrep(command, '-', '_');
 
 % Capture some common errors in the arguments.
 if matches(command, matrix_ID_pat)
