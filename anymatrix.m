@@ -363,11 +363,23 @@ end
         IDs = IDs.';
     end
 
+    function parser_function = create_parser_function(path_to_group, group_name)
+        if isfile([path_to_group filesep...
+                   'anymatrix_parser_' group_name '.m'])
+            curr_dir = cd(path_to_group);
+            parser_function = str2func(['anymatrix_parser_' group_name]);
+            cd(curr_dir);
+        else
+            parser_function = @(x)x;
+        end
+    end
+
     % Scan the group folders and obtain the matrix IDs.
     function IDs = scan_matrices(groups)
         IDs = {};
         for group = groups.'
             path_to_group = [root_path, '/', group{1}, '/private/'];
+            parser_function = create_parser_function(path_to_group, group{1});
             mfiles = dir([path_to_group, '*.m']);
             for mfile = mfiles.'
                 % Find which .m files are matrix-generating files.
@@ -376,8 +388,8 @@ end
                     contains(mfile_contents, 'properties= {') || ...
                     contains(mfile_contents, 'properties ={') || ...
                     contains(mfile_contents, 'properties={'))
-                    IDs = [IDs; [group{1}, '/', ...
-                        extractBefore(mfile.name, '.m')]];
+                    IDs = [IDs; [group{1}, '/', parser_function(...
+                        extractBefore(mfile.name, '.m'))]];
                 end
             end
             
@@ -453,6 +465,7 @@ end
         path_to_group = [root_path, '/', group_name, '/private/'];
         matrix_name = matrix_ID(slashloc+1:length(matrix_ID));
         handle = str2func(strcat('anymatrix_', group_name));
+        parser_function = create_parser_function(path_to_group, group_name);
         P = {};
         % Get properties from the M-file of the matrix.
         mfile_path = strcat(path_to_group, matrix_name, '.m');
@@ -464,7 +477,7 @@ end
                 contains(mfile_contents, 'properties={'))
                 noutputs = nargout(strcat(path_to_group, matrix_name));
                 temp = {};
-                [temp{1:noutputs-1},P] = handle(matrix_name);
+                [temp{1:noutputs-1},P] = handle(parser_function(matrix_name));
             end
         end
         % Get other properties from the entry in the properties.m file.
