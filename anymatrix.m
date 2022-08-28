@@ -483,7 +483,11 @@ end
     function P = scan_properties(matrix_IDs)
         P = {};
         for matrix_ID = matrix_IDs.'
-            P = [P; {get_properties(matrix_ID{1})}];
+            current_properties = get_properties(matrix_ID{1});
+            if size(current_properties, 2) > 1
+                current_properties = current_properties';
+            end
+            P = [P; {current_properties}];
         end
 
         % Add property 'built-in' for the built-in matrices.
