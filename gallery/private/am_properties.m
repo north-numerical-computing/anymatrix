@@ -8,7 +8,8 @@ P = {
     'chebvand', {'rectangular', 'square', 'parameter-dependent'}
     'chow', {'hessenberg', 'toeplitz', 'binary', 'eigenvalues', ...
              'rank deficient', 'parameter-dependent'}
-    'circul', {'toeplitz', 'normal', 'eigenvalues', 'parameter-dependent'}
+    'circul', {'circulant', 'toeplitz', 'normal', 'eigenvalues', ...
+               'parameter-dependent'}
     'clement', {'tridiagonal', 'eigenvalues', 'singular values'}
     'compar', {}
     'condex', {'parameter-dependent'}

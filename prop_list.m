@@ -8,6 +8,7 @@ P = {
     'binary'
     'block Toeplitz'
     'built-in'
+    'circulant'
     'complex'
     'correlation'
     'defective'
