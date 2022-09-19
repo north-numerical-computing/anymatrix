@@ -8,7 +8,7 @@ function [A,properties] = milnes(a)
 
 %  Reference:
 %  Harold Willis Milnes, A Note Concerning the Properties of a Certain Class
-%     of Test Matrices, 22(104), 827-832, 1968.
+%     of Test Matrices, Math. Comp., 22(104), 827-832, 1968.
 
 properties = {'parameter-dependent', 'integer', 'nonnegative'};
 if nargin == 0, A = []; return, end
