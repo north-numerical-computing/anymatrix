@@ -12,7 +12,7 @@ function [A,properties] = hess_sublu(a,d)
 %  Reference:
 %  M. Zounon, N. J. Higham, C. Lucas, and F. Tisseur.
 %     Performance Impact of Precision Reduction in Sparse Linear Systems
-%     Solvers. PeerJ Comput. Sci., to appear, 2022.
+%     Solvers. PeerJ Comput. Sci., 8:e778(1-22), 2022.
 
 properties = {'hessenberg', 'parameter-dependent'};
 if nargin == 0, A = []; return, end

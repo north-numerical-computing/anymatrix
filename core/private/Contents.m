@@ -2,15 +2,23 @@
 %
 %   augment    - Augmented system matrix.
 %   beta       - Symmetric totally positive matrix of integers.
+%   biogeography - Tridiagonal matrix with nonpositive eigenvalues.
 %   blockhouse - Block Householder matrix.
+%   circul_binom - Circulant matrix based on binomial coefficients.
+%   collatz    - Matrix associated with the Collatz problem.
 %   dembo9     - Symmetric Hankel matrix of order 9 and rank 5.
 %   edelman27  - Matrix for which det is computed as the wrong integer.
 %   fourier    - Fourier matrix.
 %   gfpp       - Matrix giving maximal growth for Gaussian elim. with pivoting.
 %   hessfull01 - Totally nonnegative lower Hessenberg Toeplitz matrix.
+%   hessmaxdet - Upper Hessenberg matrix with maximal determinant.
+%   hess_sublu - Upper Hessengerg matrix giving subnormal numbers in LU factor.
 %   kms_nonsymm - Nonsymmetric Kac-Murdock-Szego Toeplitz matrix.
+%   milnes     -  Upper triangle 1s and constant columnss in lower triangle.
 %   nilpot_tridiag - Nilpotent tridiagonal matrix (sparse).
 %   nilpot_triang - Nilpotent triangular matrix.
+%   perfect_shuffle - Perfect shuffle permutation matrix.
+%   pick       - Skew-symmetric matrix giving equality in Pick's inequality.
 %   rschur     - Upper quasi-triangular matrix.
 %   soules     - Soules matrix.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
