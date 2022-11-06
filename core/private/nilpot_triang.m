@@ -1,10 +1,10 @@
 function [A,properties] = nilpot_triang(n,theta) 
 %NILPOT_TRIANG  Nilpotent triangular matrix.
 %   A = NILPOT_TRIANG(N) is an N-by-N nilpotent upper triangular matrix.
-%   It has zero diaognal and ones iabovd the diagonal.
+%   It has zero diagonal and ones above the diagonal.
 %   A^N = 0, modulo rounding errors.
 %   A does not have a square root, or a pth root for any integer p >= 2.
-%   A = NILPOT_TRIANG(N,THETA) has all elements above the superdiaognal 
+%   A = NILPOT_TRIANG(N,THETA) has all elements above the superdiagonal 
 %   equal to THETA.  The default is THETA = 1.
 
 %   Reference:

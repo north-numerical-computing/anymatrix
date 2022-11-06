@@ -24,6 +24,7 @@
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
 %   triminsval01 - Optimal upper triangular binary Toeplitz matrix.
+%   uptraporth - Upper trapezoidal matrix with orthogonal rows.
 %   vand       - Vandermonde matrix.
 %   vecperm    - Vec-permutation matrix.
 %   wilson     - Wilson matrix.

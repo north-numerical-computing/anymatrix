@@ -6,9 +6,9 @@ function [P,properties] = pick(n)
 %   It gives equality in Pick's inequality for the imaginary parts of the
 %   eigenvalues of a real matrix.
 
-%   References:
+%   Reference:
 %   D. A. Gregory and S. J. Kirkland and B. L. Shader, Pick's Inequality
-%     and Tournaments, Linear Algebra Appl. 186, 15-36, 1993.
+%   and Tournaments, Linear Algebra Appl. 186, 15-36, 1993.
 
 properties = {'skew-symmetric', 'integer', 'toeplitz', 'eigenvalues'};
 if nargin == 0, P = []; return, end
