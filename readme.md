@@ -26,6 +26,7 @@ The following matrices have been added since v1.0.
 - core/hess_sublu
 - core/milnes
 - core/pick
+- core/tournament
 - core/uptraporth
 - Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
 
