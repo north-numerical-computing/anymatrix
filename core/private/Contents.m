@@ -3,6 +3,7 @@
 %   augment    - Augmented system matrix.
 %   beta       - Symmetric totally positive matrix of integers.
 %   biogeography - Tridiagonal matrix with nonpositive eigenvalues.
+%   blockcirc  - Block circulant matrix with one nonzero block diagonal.
 %   blockhouse - Block Householder matrix.
 %   circul_binom - Circulant matrix based on binomial coefficients.
 %   collatz    - Matrix associated with the Collatz problem.
@@ -21,8 +22,10 @@
 %   pick       - Skew-symmetric matrix giving equality in Pick's inequality.
 %   rschur     - Upper quasi-triangular matrix.
 %   soules     - Soules matrix.
+%   stoch_perfect - Stochastic matrix with nonnegative eigenvalues.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
+%   tournament   - Tournament matrix with maximal spectral radius.
 %   triminsval01 - Optimal upper triangular binary Toeplitz matrix.
 %   uptraporth - Upper trapezoidal matrix with orthogonal rows.
 %   vand       - Vandermonde matrix.
