@@ -21,11 +21,13 @@ Currently, the built-in collection contains matrices organized into 7 groups:
 The following matrices have been added since v1.0.
 
 - core/biogeography
+- core/blockcirc
 - core/circul_binom
 - core/collatz
 - core/hess_sublu
 - core/milnes
 - core/pick
+- core/stoch_perfect
 - core/tournament
 - core/uptraporth
 - Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
