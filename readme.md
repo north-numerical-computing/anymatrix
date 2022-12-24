@@ -27,6 +27,7 @@ The following matrices have been added since v1.0.
 - core/hess_sublu
 - core/milnes
 - core/pick
+- core/stoch_cesaro
 - core/stoch_perfect
 - core/tournament
 - core/uptraporth
