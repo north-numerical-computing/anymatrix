@@ -28,6 +28,7 @@
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
 %   tournament   - Tournament matrix with maximal spectral radius.
 %   triminsval01 - Optimal upper triangular binary Toeplitz matrix.
+%   unitary_eye - Unitary matrix: block 2-by-2 with blocks multiples of EYE.
 %   uptraporth - Upper trapezoidal matrix with orthogonal rows.
 %   vand       - Vandermonde matrix.
 %   vecperm    - Vec-permutation matrix.

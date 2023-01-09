@@ -5,7 +5,7 @@ function [F,properties] = fourier(n)
 %  It is unitary and F^4 is the identity.
 %  This is essentially the same matrix as FFT(EYE(N))/SQRT(N).
 
-properties = {'unitary'};
+properties = {'unitary', 'complex'};
 if nargin == 0, F = []; return, end
 
 F = anymatrix('gallery/orthog',n,3);
