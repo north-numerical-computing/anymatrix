@@ -7,6 +7,7 @@
 %   blockhouse - Block Householder matrix.
 %   circul_binom - Circulant matrix based on binomial coefficients.
 %   collatz    - Matrix associated with the Collatz problem.
+%   cross      -  Cross-shaped matrix.
 %   dembo9     - Symmetric Hankel matrix of order 9 and rank 5.
 %   edelman27  - Matrix for which det is computed as the wrong integer.
 %   fourier    - Fourier matrix.
@@ -18,6 +19,7 @@
 %   milnes     -  Upper triangle 1s and constant columnss in lower triangle.
 %   nilpot_tridiag - Nilpotent tridiagonal matrix (sparse).
 %   nilpot_triang - Nilpotent triangular matrix.
+%   orthog_cauchy - Orthogonal Cauchy-like matrix.
 %   perfect_shuffle - Perfect shuffle permutation matrix.
 %   pick       - Skew-symmetric matrix giving equality in Pick's inequality.
 %   rschur     - Upper quasi-triangular matrix.

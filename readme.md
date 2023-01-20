@@ -24,8 +24,10 @@ The following matrices have been added since v1.0.
 - core/blockcirc
 - core/circul_binom
 - core/collatz
+- core/cross
 - core/hess_sublu
 - core/milnes
+- core/orthog_cauchy 
 - core/pick
 - core/stoch_cesaro
 - core/stoch_perfect
