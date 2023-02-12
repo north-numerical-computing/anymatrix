@@ -3,7 +3,7 @@ function [A,properties] = blockcirc(B,k)
 %   A = BLOCKCIRC(n) is an n-by-n nonnegative block circulant matrix with
 %   one nonzero block diagonal.  Its eigenvalues lie on circles in the
 %   complex plane.
-%   A = BLOCKCIRC(B,m), where B is a p-by-p matrix, is the kp-by-kp,
+%   A = BLOCKCIRC(B,k), where B is a p-by-p matrix, is the kp-by-kp,
 %   block k-by-k matrix with B on the first block superdiagonal and in the
 %   (k,1) block.  For example, for k = 3,
 %                 A = [0 B 0  
@@ -11,8 +11,8 @@ function [A,properties] = blockcirc(B,k)
 %                      B 0 0];
 %   The eigenvalues of A are the eigenvalues of B multiplied 
 %   by the k'th roots of unity.
-%   A = BLOCKCIRC(n) is equivalent to A = BLOCKCIRC(B,k) with
-%   B = gallery('frank',m) and k the smallest prime factor of n,
+%   A = BLOCKCIRC(n) is equivalent to A = BLOCKCIRC(B,k) with k = n/m,
+%   B = gallery('frank',m), and m the smallest prime factor of n,
 %   or of n+1 if n is prime.
 
 %   Reference:
