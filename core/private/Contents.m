@@ -15,6 +15,7 @@
 %   hessfull01 - Totally nonnegative lower Hessenberg Toeplitz matrix.
 %   hessmaxdet - Upper Hessenberg matrix with maximal determinant.
 %   hess_sublu - Upper Hessengerg matrix giving subnormal numbers in LU factor.
+%   indef      -  Symmetric indefinite matrix with known inertia.
 %   kms_nonsymm - Nonsymmetric Kac-Murdock-Szego Toeplitz matrix.
 %   milnes     -  Upper triangle 1s and constant columnss in lower triangle.
 %   nilpot_tridiag - Nilpotent tridiagonal matrix (sparse).

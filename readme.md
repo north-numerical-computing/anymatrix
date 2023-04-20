@@ -26,6 +26,7 @@ The following matrices have been added since v1.0.
 - core/collatz
 - core/cross
 - core/hess_sublu
+- core/indef
 - core/milnes
 - core/orthog_cauchy 
 - core/pick
