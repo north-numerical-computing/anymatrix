@@ -14,6 +14,7 @@
 %   gfpp       - Matrix giving maximal growth for Gaussian elim. with pivoting.
 %   hessfull01 - Totally nonnegative lower Hessenberg Toeplitz matrix.
 %   hessmaxdet - Upper Hessenberg matrix with maximal determinant.
+%   hess_orth  - Lower Hessenberg matrix with orthogonal columns.
 %   hess_sublu - Upper Hessengerg matrix giving subnormal numbers in LU factor.
 %   indef      -  Symmetric indefinite matrix with known inertia.
 %   kms_nonsymm - Nonsymmetric Kac-Murdock-Szego Toeplitz matrix.

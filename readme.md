@@ -25,6 +25,7 @@ The following matrices have been added since v1.0.
 - core/circul_binom
 - core/collatz
 - core/cross
+- core/hess_orth
 - core/hess_sublu
 - core/indef
 - core/milnes
