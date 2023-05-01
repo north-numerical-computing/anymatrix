@@ -32,6 +32,7 @@ The following matrices have been added since v1.0.
 - core/orthog_cauchy 
 - core/pick
 - core/stoch_cesaro
+- core/stoch_compan
 - core/stoch_perfect
 - core/tournament
 - core/unitary_eye

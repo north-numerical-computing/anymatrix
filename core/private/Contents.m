@@ -27,6 +27,7 @@
 %   rschur     - Upper quasi-triangular matrix.
 %   soules     - Soules matrix.
 %   stoch_cesaro -  Lower triangular stochastic matrix from Cesaro summation.
+%   stoch_compan - Stochastic companion matrix.
 %   stoch_perfect - Stochastic matrix with nonnegative eigenvalues.
 %   symmstoch  - Symmetric stochastic matrix with given spectrum.
 %   totally_nonneg - Nonsingular totally nonnegative matrix.
