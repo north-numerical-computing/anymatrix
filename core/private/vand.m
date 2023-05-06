@@ -11,7 +11,8 @@ function [V,properties] = vand(m,p)
 %   Second edition, Society for Industrial and Applied Mathematics,
 %   Philadelphia, PA, 2002; chap. 22.
 
-properties = {'square', 'rectangular', 'parameter-dependent'};
+properties = {'square', 'rectangular', 'parameter-dependent', ...
+              'totally nonnegative'};
 if nargin == 0, V = []; return, end
 
 if nargin == 1, p = m; end

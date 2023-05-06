@@ -20,7 +20,7 @@ P = {
                  'ill conditioned', 'unimodular'}
     'fiedler', {'symmetric', 'indefinite', 'parameter-dependent'}
     'forsythe', {'eigenvalues', 'parameter-dependent'}
-    'frank', {'hessenberg', 'integer', 'nonnegative'}
+    'frank', {'hessenberg', 'integer', 'totally nonnegative'}
     'gcdmat', {'symmetric', 'positive definite', 'integer', 'positive', ...
                'infinitely divisible'}
     'gearmat', {'eigenvalues', 'rank deficient', 'integer', ...
