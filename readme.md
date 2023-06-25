@@ -24,6 +24,7 @@ The following matrices have been added since v1.0.
 - core/blockcirc
 - core/circul_binom
 - core/collatz
+- core/creation
 - core/cross
 - core/hess_orth
 - core/hess_sublu
