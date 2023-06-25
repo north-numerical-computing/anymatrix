@@ -5,6 +5,7 @@ function P = prop_list
 
 P = {
     'banded'
+    'bidiagonal'
     'binary'
     'block Toeplitz'
     'built-in'

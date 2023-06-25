@@ -9,7 +9,7 @@ function [A,properties] = hessfull01(n)
 
 %   See also gallery/chow.
 
-%   Reference:
+%   References:
 %   Richard Brualdi and Steve Kirkland, Totally nonnegative (0,1)-matrices, 
 %     Linear Algebra Appl. 432, 1650-1662, 2010.
 %   Shaun M. Fallat and Michael I. Gekhtman and Charles R. Johnson,

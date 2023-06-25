@@ -7,6 +7,7 @@
 %   blockhouse - Block Householder matrix.
 %   circul_binom - Circulant matrix based on binomial coefficients.
 %   collatz    - Matrix associated with the Collatz problem.
+%   creation   - Nonnegative upper bidiagonal matrix with zero diagonal.
 %   cross      -  Cross-shaped matrix.
 %   dembo9     - Symmetric Hankel matrix of order 9 and rank 5.
 %   edelman27  - Matrix for which det is computed as the wrong integer.
