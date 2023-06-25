@@ -6,6 +6,7 @@ function M = prop_map
 %   for the first elements to be specified.
 
 M = {'banded', {'tridiagonal'}
+     'banded', {'bidiagonal'}
      'binary', {'permutation'}
      'integer', {'binary'}
      'nonnegative', {'binary', 'positive', 'stochastic', ...
@@ -15,4 +16,5 @@ M = {'banded', {'tridiagonal'}
      'symmetric', {'correlation', 'hankel'}
      'positive definite', {'correlation'}
      'totally nonnegative', {'totally positive'}
+     'triangular', {'bidiagonal'}
     };
