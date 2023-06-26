@@ -38,7 +38,11 @@ The following matrices have been added since v1.0.
 - core/tournament
 - core/unitary_eye
 - core/uptraporth
-- Hadamard matrix of Edelman and Friedman: anymatrix('hadamard/hadamard',16,9)
+- Hadamard matrix of Edelman and Friedman:
+  anymatrix('hadamard/hadamard',16,9)
+  
+The input arguments for core/totally_nonneg have been changed
+and the ability to return the infinity norm condition number has been added.
 
 ## Quick start
 
