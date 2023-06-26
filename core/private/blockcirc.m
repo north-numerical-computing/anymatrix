@@ -30,7 +30,7 @@ if nargin == 1
    if ~isscalar(n), error('First (only) argument must be a scalar.'), end 
    f = factor(n);
    if f == n
-      n = n+1
+      n = n+1;
       f = factor(n);
       nprime = 1;
    end    
