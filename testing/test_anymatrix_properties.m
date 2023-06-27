@@ -140,7 +140,8 @@ end
 
 % Run the testsuite.
 test_results = runner.run(anymatrix_func_based_tests);
-table(test_results)
+rt = table(test_results);
+disp(rt)
 
 % Output the test results if required.
 if results_out
