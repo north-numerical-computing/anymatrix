@@ -35,6 +35,7 @@ The following matrices have been added since v1.0.
 - core/stoch_cesaro
 - core/stoch_compan
 - core/stoch_perfect
+- core/stoch_revtri
 - core/tournament
 - core/unitary_eye
 - core/uptraporth
