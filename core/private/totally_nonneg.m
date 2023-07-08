@@ -67,7 +67,7 @@ if nargout == 2
          b = L\b;
     end
     % Solve with D = M(D).
-    b = diag(diag(X))\b;
+    b = b ./ diag(X);  % Equivalent to b = diag(diag(X))\b;
     % Solve with M(U).
     for j  = 1:n-1
          U  = eye(n) - diag([zeros(j-1,1); diag(X,j)],1);
