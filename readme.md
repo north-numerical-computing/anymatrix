@@ -16,6 +16,8 @@ Currently, the built-in collection contains matrices organized into 7 groups:
 * [nessie](nessie/private/Contents.m) - matrices from real-life networks.
 * [regtools](regtools/private/Contents.m) - matrices from regularization problems.
 
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=mmikaitis/anymatrix)
+
 ## What's New
 
 The following matrices have been added since v1.0.
