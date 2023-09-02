@@ -22,6 +22,7 @@ Currently, the built-in collection contains matrices organized into 7 groups:
 
 The following matrices have been added since v1.0.
 
+- core/bidiag_alt
 - core/biogeography
 - core/blockcirc
 - core/circul_binom

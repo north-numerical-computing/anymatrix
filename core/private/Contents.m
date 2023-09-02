@@ -2,6 +2,7 @@
 %
 %   augment    - Augmented system matrix.
 %   beta       - Symmetric totally positive matrix of integers.
+%   bidiag_alt - Upper bidiagonal matrix with alternating superdiagonal entries.
 %   biogeography - Tridiagonal matrix with nonpositive eigenvalues.
 %   blockcirc  - Block circulant matrix with one nonzero block diagonal.
 %   blockhouse - Block Householder matrix.
