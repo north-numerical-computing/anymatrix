@@ -12,4 +12,6 @@ if nargin == 0, A = []; return, end
 if nargin < 2, x = 10; end
 
 A = eye(n);
-for i = 1:n-1, A(i,i+1) = x; x = -1/x; end
+for i = 1:2:n-1, A(i,i+1) = x; end
+x = -1/x; 
+for i = 2:2:n-1, A(i,i+1) = x; end
