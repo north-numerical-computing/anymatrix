@@ -2,8 +2,8 @@ function [A,properties] = bidiag_alt(n,x)
 %BIDIAG_ALT   Upper bidiagonal matrix with alternating superdiagonal entries.
 %   B = BIDIAG_ALT(n,x) is an n-by-n unit upper bidiagonal matrix with
 %   superdiagonal entries alternating x, -1/x, x, ...
-%   The 2-norm condition number of B satisfies
-%       sqrt(n/2)*(1 + abs(x)^2) <= cond(B) <= (n/2)*(1 + abs(x))^2.
+%   The 2-norm condition number of B satisfies, with z = max(abs(x),1/abs(x)),
+%       sqrt(n/2-1)*(1 + z^2) <= cond(B) <= (n/2)*(1 + z)^2.
 %   The default is x = 10.
 
 properties = {'bidiagonal', 'ill conditioned'};
