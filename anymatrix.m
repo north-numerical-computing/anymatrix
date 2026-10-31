@@ -149,6 +149,7 @@ root_path = fileparts(strcat(mfilename('fullpath'), '.m'));
 % set IDs, if it hasn't been scanned yet.
 if isempty(files_scanned)
     % Add anymatrix/sets and anymatrix/testing to the search path.
+    addpath(strcat(root_path));
     addpath(strcat(root_path, '/sets'));
     addpath(strcat(root_path, '/testing'));
     supported_properties = prop_list();
@@ -331,33 +332,23 @@ end
         cd(current_folder);
     end
 
-    % Check if a folder in anymatrix root directory is a group folder.
-    % Group directories have one private/ directory and one file named
-    % anymatrix_<dir_name>.m where <dir_name> is the directory name.
+    % Check `directory` folder has a 'private' folder
+    % and a file anymatrix_<dir_name>.
+    % and is not '.' or '..'
     function out = is_group_dir(directory)
-        % Check dir is not current or previous directories '.' and '..',
-        % and check dir has two files additionally to '.' and '..'.
-        if (any(strcmp(directory, {'.', '..'})) || ...
-                (length(dir(strcat(root_path, '/', directory)))) ~= 4)
-            out = false;
-        else
-            % Check dir has a 'private' directory and a file
-            % anymatrix_<dir_name>.
-            out = ~(isempty(dir(strcat(root_path, '/', directory, ...
-                                       '/private/'))) || ...
-                    isempty(dir(strcat(root_path, '/', directory, ...
-                                       '/anymatrix_', directory, '.m'))));
-        end
+        out = ~any(strcmp(directory, {'.', '..'})) && ...
+              ~isempty(dir([root_path '/groups/' directory '/private/'])) && ...
+              ~isempty(dir([root_path '/groups/' directory '/anymatrix_' directory '.m']));
     end
 
     % Scan the root folder and obtain the group IDs.
     function IDs = scan_groups()
-        contents = dir(root_path);
+        contents = dir([root_path, '/groups']);
         IDs = {};
         for k = 1:length(contents)
             if contents(k).isdir && is_group_dir(contents(k).name)
                 IDs{end+1} = contents(k).name;
-                addpath(strcat(root_path, '/', contents(k).name));
+                addpath(strcat(root_path, '/groups/', contents(k).name));
             end
         end
         IDs = IDs.';
@@ -367,7 +358,7 @@ end
     function IDs = scan_matrices(groups)
         IDs = {};
         for group = groups.'
-            path_to_group = [root_path, '/', group{1}, '/private/'];
+            path_to_group = [root_path, '/groups/', group{1}, '/private/'];
             mfiles = dir([path_to_group, '*.m']);
             for mfile = mfiles.'
                 % Find which .m files are matrix-generating files.
@@ -450,7 +441,7 @@ end
     function P = get_properties(matrix_ID)
         slashloc = find(matrix_ID == '/');
         group_name = matrix_ID(1:slashloc-1);
-        path_to_group = [root_path, '/', group_name, '/private/'];
+        path_to_group = [root_path, '/groups/', group_name, '/private/'];
         matrix_name = matrix_ID(slashloc+1:length(matrix_ID));
         handle = str2func(strcat('anymatrix_', group_name));
         P = {};
@@ -576,7 +567,7 @@ end
             slashloc = find(matrix_ID == '/');
             group_name = matrix_ID(1:slashloc-1);
             matrix_name = matrix_ID(slashloc+1:length(matrix_ID));
-            path_to_mat = [root_path, '/', group_name, '/private/', ...
+            path_to_mat = [root_path, '/groups/', group_name, '/private/', ...
                 matrix_name];
             if strcmp('gallery', group_name)
                 H = help(strcat('private/', matrix_name));
@@ -593,8 +584,8 @@ end
 
     % Display info in the Contents.m of a specified group.
     function show_contents(group_ID)
-         if isfile(strcat(root_path, '/', group_ID, '/private/Contents.m'))
-             type(strcat(root_path, '/', group_ID, '/private/Contents.m'))
+         if isfile(strcat(root_path, '/groups/', group_ID, '/private/Contents.m'))
+             type(strcat(root_path, '/groups/', group_ID, '/private/Contents.m'))
          else
              error('No Contents.m exists for that group.')
          end  
@@ -602,7 +593,7 @@ end
 
     % Create or update a specified git group.
     function update_git_group(group_ID, repo_ID)
-        group_folder = strcat(root_path, '/', group_ID, '/');
+        group_folder = strcat(root_path, '/groups/', group_ID, '/');
         % If the group does not exist locally, create folders and clone it.
         if ~isfolder(group_folder)
             if count(repo_ID, '/') > 1 || ...
@@ -661,7 +652,7 @@ end
     function run_group_tests(group_ID)
         handle = str2func(strcat('anymatrix_', group_ID));
         test_func = 'test_run';
-        if (isfile(strcat(root_path, '/', group_ID, '/private/', ...
+        if (isfile(strcat(root_path, '/groups/', group_ID, '/private/', ...
                           test_func, '.m')))
             handle(test_func);
         else
